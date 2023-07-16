@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 const dashboard24HoursPerformanceChart = {
   data: (canvas) => {
     return {
@@ -148,58 +130,27 @@ const dashboardEmailStatisticsChart = {
   },
 };
 
-const dashboardNASDAQChart = {
+const dashboardBarChart = {
   data: (canvas) => {
     return {
-      labels: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ],
+      labels: ['Đầm', 'Áo', 'Quần','Váy'],
       datasets: [
         {
-          data: [0, 19, 15, 20, 30, 40, 40, 50, 25, 30, 50, 70],
-          fill: false,
-          borderColor: "#fbc658",
-          backgroundColor: "transparent",
-          pointBorderColor: "#fbc658",
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8,
-          tension: 0.4,
-        },
-        {
-          data: [0, 5, 10, 12, 20, 27, 30, 34, 42, 45, 55, 63],
-          fill: false,
-          borderColor: "#51CACF",
-          backgroundColor: "transparent",
-          pointBorderColor: "#51CACF",
-          pointRadius: 4,
-          pointHoverRadius: 4,
-          pointBorderWidth: 8,
-          tension: 0.4,
+          label: "Clothings",
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          backgroundColor: ["#e3e3e3", "#4acccd", "#fcc468", "#ef8157"],
+          borderWidth: 0,
+          data: [342, 480, 530, 120],
         },
       ],
     };
   },
-  options: {
-    plugins: {
-      legend: { display: false },
-    },
-  },
 };
+
 
 module.exports = {
   dashboard24HoursPerformanceChart,
   dashboardEmailStatisticsChart,
-  dashboardNASDAQChart,
+  dashboardBarChart,
 };

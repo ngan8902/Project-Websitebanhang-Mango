@@ -1,24 +1,7 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
-// react plugin used to create charts
+import * as React from "react";
 import { Line, Pie } from "react-chartjs-2";
+import {FaTshirt, FaMoneyCheck, FaRegListAlt, FaMoneyCheckAlt } from "react-icons/fa";
+import { Bar } from 'react-chartjs-2';
 // reactstrap components
 import {
   Card,
@@ -33,7 +16,7 @@ import {
 import {
   dashboard24HoursPerformanceChart,
   dashboardEmailStatisticsChart,
-  dashboardNASDAQChart,
+  dashboardBarChart,
 } from "variables/charts.js";
 
 function Dashboard() {
@@ -46,14 +29,14 @@ function Dashboard() {
               <CardBody>
                 <Row>
                   <Col md="4" xs="5">
-                    <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-globe text-warning" />
+                    <div className="icon-big text-center icon-warning" >
+                      <FaTshirt className="clothing" ></FaTshirt>
                     </div>
                   </Col>
                   <Col md="8" xs="7">
                     <div className="numbers">
-                      <p className="card-category">Capacity</p>
-                      <CardTitle tag="p">150GB</CardTitle>
+                      <p className="card-category">Sản Phẩm Đã Bán</p>
+                      <CardTitle tag="p">1000</CardTitle>
                       <p />
                     </div>
                   </Col>
@@ -73,12 +56,12 @@ function Dashboard() {
                 <Row>
                   <Col md="4" xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-money-coins text-success" />
+                      <FaMoneyCheckAlt className="money"></FaMoneyCheckAlt>
                     </div>
                   </Col>
                   <Col md="8" xs="7">
                     <div className="numbers">
-                      <p className="card-category">Revenue</p>
+                      <p className="card-category">Doanh Thu</p>
                       <CardTitle tag="p">$ 1,345</CardTitle>
                       <p />
                     </div>
@@ -99,12 +82,12 @@ function Dashboard() {
                 <Row>
                   <Col md="4" xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-vector text-danger" />
+                    <FaRegListAlt className="bill"></FaRegListAlt>
                     </div>
                   </Col>
                   <Col md="8" xs="7">
                     <div className="numbers">
-                      <p className="card-category">Errors</p>
+                      <p className="card-category">Số đơn hàng</p>
                       <CardTitle tag="p">23</CardTitle>
                       <p />
                     </div>
@@ -125,13 +108,13 @@ function Dashboard() {
                 <Row>
                   <Col md="4" xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <i className="nc-icon nc-favourite-28 text-primary" />
+                      <FaMoneyCheck className="bill-cancel"></FaMoneyCheck>               
                     </div>
                   </Col>
                   <Col md="8" xs="7">
                     <div className="numbers">
-                      <p className="card-category">Followers</p>
-                      <CardTitle tag="p">+45K</CardTitle>
+                      <p className="card-category">Số đơn hủy</p>
+                        <CardTitle tag="p">50</CardTitle>
                       <p />
                     </div>
                   </Col>
@@ -150,8 +133,8 @@ function Dashboard() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h5">Users Behavior</CardTitle>
-                <p className="card-category">24 Hours performance</p>
+                <CardTitle tag="h5">Biểu đồ</CardTitle>
+                <p className="card-category">Hiệu suất 24h</p>
               </CardHeader>
               <CardBody>
                 <Line
@@ -164,7 +147,7 @@ function Dashboard() {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="fa fa-history" /> Updated 3 minutes ago
+                  <i className="fa fa-history" /> Cập nhật 3 phút trước
                 </div>
               </CardFooter>
             </Card>
@@ -174,8 +157,8 @@ function Dashboard() {
           <Col md="4">
             <Card>
               <CardHeader>
-                <CardTitle tag="h5">Email Statistics</CardTitle>
-                <p className="card-category">Last Campaign Performance</p>
+                <CardTitle tag="h5">Thống kê Email</CardTitle>
+                <p className="card-category">Hiệu suất</p>
               </CardHeader>
               <CardBody style={{ height: "266px" }}>
                 <Pie
@@ -185,14 +168,14 @@ function Dashboard() {
               </CardBody>
               <CardFooter>
                 <div className="legend">
-                  <i className="fa fa-circle text-primary" /> Opened{" "}
-                  <i className="fa fa-circle text-warning" /> Read{" "}
-                  <i className="fa fa-circle text-danger" /> Deleted{" "}
-                  <i className="fa fa-circle text-gray" /> Unopened
+                  <i className="fa fa-circle text-primary" /> Đã phản hồi{" "}
+                  <i className="fa fa-circle text-warning" /> Đã đọc{" "}<br></br>
+                  <i className="fa fa-circle text-danger" /> Đã xóa{" "}
+                  <i className="fa fa-circle text-gray" /> Chưa mở
                 </div>
                 <hr />
                 <div className="stats">
-                  <i className="fa fa-calendar" /> Number of emails sent
+                  <i className="fa fa-calendar" /> Số email đã được gửi 
                 </div>
               </CardFooter>
             </Card>
@@ -200,26 +183,30 @@ function Dashboard() {
           <Col md="8">
             <Card className="card-chart">
               <CardHeader>
-                <CardTitle tag="h5">NASDAQ: AAPL</CardTitle>
-                <p className="card-category">Line Chart with Points</p>
+                <CardTitle tag="h5"></CardTitle>
+                <p className="card-category"></p>
               </CardHeader>
               <CardBody>
-                <Line
-                  data={dashboardNASDAQChart.data}
-                  options={dashboardNASDAQChart.options}
-                  width={400}
-                  height={100}
-                />
+              <div className="chart-container">
+              <h2 style={{ textAlign: "center" }}>Sản phẩm bán chạy</h2>
+              <Bar
+                data={dashboardBarChart.data}
+                options={{
+                  plugins: {
+                    title: {
+                      display: true,
+                      text: "Số sản phẩm bán được trong vòng 12 tháng"
+                    },
+                    legend: {
+                      display: false
+                    }
+                  }
+                }}
+              />
+            </div>
               </CardBody>
               <CardFooter>
-                <div className="chart-legend">
-                  <i className="fa fa-circle text-info" /> Tesla Model S{" "}
-                  <i className="fa fa-circle text-warning" /> BMW 5 Series
-                </div>
-                <hr />
-                <div className="card-stats">
-                  <i className="fa fa-check" /> Data information certified
-                </div>
+                
               </CardFooter>
             </Card>
           </Col>

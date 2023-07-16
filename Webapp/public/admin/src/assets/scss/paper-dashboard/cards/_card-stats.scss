@@ -16,10 +16,12 @@
             p{
                 margin-bottom: 0;
             }
+           
             .card-category {
               color: $dark-gray;
-              font-size: 16px;
+              font-size: 14px;
               line-height: 1.4em;
+               
             }
         }
     }
@@ -37,11 +39,20 @@
     }
     .icon-big {
         font-size: 3em;
-        min-height: 64px;
-
-        i{
-            line-height: 59px;
-        }
+       // min-height: 64px;
+        line-height: 59px;
+        .bill-cancel{
+          color: $red-gray;
+        };
+        .bill{
+          color: $purple-color;
+        };
+        .clothing{
+          color: $yellow-gray;
+        };
+        .money{
+          color: $success-color;
+        };
     }
 
 
