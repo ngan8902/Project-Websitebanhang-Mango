@@ -1,0 +1,25 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+/Document/TemplateAdmin/node_modules
+# dependencies
+/Webapp/public/admin/node_modules
+/Webapp/public/admin/package-lock.json
+/Webapp/node_modules
+/Webapppackage-lock.json
+
+# testing
+/coverage
+
+# production
+/Webapp/build
+
+# misc
+/Webapp/.DS_Store
+/Webapp/.env.local
+/Webapp/.env.development.local
+/Webapp/.env.test.local
+/Webapp/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
