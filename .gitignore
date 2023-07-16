@@ -4,6 +4,8 @@
 # dependencies
 /Webapp/public/admin/node_modules
 /Webapp/public/admin/package-lock.json
+/Webapp/public/client/node_modules
+/Webapp/public/client/package-lock.json
 /Webapp/node_modules
 /Webapppackage-lock.json
 
