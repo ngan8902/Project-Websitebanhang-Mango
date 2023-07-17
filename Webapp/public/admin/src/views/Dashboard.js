@@ -18,6 +18,7 @@ import {
   dashboardEmailStatisticsChart,
   dashboardBarChart,
 } from "variables/charts.js";
+import Day from "es-abstract/5/Day";
 
 function Dashboard() {
   return (
@@ -45,7 +46,7 @@ function Dashboard() {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="fas fa-sync-alt" /> Update Now
+                  <i className="fas fa-sync-alt" /> Cập nhật
                 </div>
               </CardFooter>
             </Card>
@@ -71,7 +72,8 @@ function Dashboard() {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="far fa-calendar" /> Last day
+                  <i className="far fa-calendar" /> Ngày {' '}
+                  <input type="text" className="date" value="17/7/2023" style={{fontSize: '0.75rem', color: '#9A9A9A', border:'white'}}></input>
                 </div>
               </CardFooter>
             </Card>
@@ -97,7 +99,8 @@ function Dashboard() {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="far fa-clock" /> In the last hour
+                  <i className="far fa-clock" />
+                  <input type="text" className="time" value="18:00" style={{fontSize: '0.75rem', color: '#9A9A9A', border:'white'}}></input> 
                 </div>
               </CardFooter>
             </Card>
@@ -123,7 +126,7 @@ function Dashboard() {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="fas fa-sync-alt" /> Update now
+                  <i className="fas fa-sync-alt" /> Cập nhật
                 </div>
               </CardFooter>
             </Card>

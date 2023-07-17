@@ -19,127 +19,61 @@ function Tables() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h4">Simple Table</CardTitle>
+                <CardTitle tag="h4">Các sản phẩm</CardTitle>
               </CardHeader>
               <CardBody>
                 <Table responsive>
                   <thead className="text-primary">
                     <tr>
-                      <th>Product</th>
-                      <th>Color</th>
-                      <th>Type</th>
-                      <th className="text-right">Price</th>
+                      <th>Sản phẩm</th>
+                      <th>Màu</th>
+                      <th>Loại</th>
+                      <th className="text-right">Giá</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Dakota Rice</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
+                      <td>Áo sơ mi</td>
+                      <td>Xanh, Đỏ, Trắng, Đen</td>
+                      <td>Áo</td>
                       <td className="text-right">$36,738</td>
                     </tr>
                     <tr>
-                      <td>Minerva Hooper</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
+                      <td>Đầm body</td>
+                      <td>Đen, Trắng</td>
+                      <td>Đầm</td>
                       <td className="text-right">$23,789</td>
                     </tr>
                     <tr>
-                      <td>Sage Rodriguez</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
+                      <td>Váy xếp ly</td>
+                      <td>Trắng, Đen, Xanh, Be</td>
+                      <td>Chân váy</td>
                       <td className="text-right">$56,142</td>
                     </tr>
                     <tr>
-                      <td>Philip Chaney</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
+                      <td>Áo crop-top</td>
+                      <td>Ghi, Xám, Hồng</td>
+                      <td>Áo</td>
                       <td className="text-right">$38,735</td>
                     </tr>
                     <tr>
-                      <td>Doris Greene</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
+                      <td>Set đồ thể thao</td>
+                      <td>Đen, Xám</td>
+                      <td>Set</td>
                       <td className="text-right">$63,542</td>
-                    </tr>
+                    </tr>   
                     <tr>
-                      <td>Mason Porter</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$78,615</td>
-                    </tr>
+                      <td>Quần Jean</td>
+                      <td>Đen, Xanh Đen</td>
+                      <td>Quần</td>
+                      <td className="text-right">$50,000</td>
+                    </tr>       
                     <tr>
-                      <td>Jon Porter</td>
-                      <td>Portugal</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$98,615</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col md="12">
-            <Card className="card-plain">
-              <CardHeader>
-                <CardTitle tag="h4">Table on Plain Background</CardTitle>
-                <p className="card-category">
-                  Here is a subtitle for this table
-                </p>
-              </CardHeader>
-              <CardBody>
-                <Table responsive>
-                  <thead className="text-primary">
-                    <tr>
-                      <th>Name</th>
-                      <th>Country</th>
-                      <th>City</th>
-                      <th className="text-right">Salary</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Dakota Rice</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
-                      <td className="text-right">$36,738</td>
-                    </tr>
-                    <tr>
-                      <td>Minerva Hooper</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                      <td className="text-right">$23,789</td>
-                    </tr>
-                    <tr>
-                      <td>Sage Rodriguez</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                      <td className="text-right">$56,142</td>
-                    </tr>
-                    <tr>
-                      <td>Philip Chaney</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                      <td className="text-right">$38,735</td>
-                    </tr>
-                    <tr>
-                      <td>Doris Greene</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                      <td className="text-right">$63,542</td>
-                    </tr>
-                    <tr>
-                      <td>Mason Porter</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$78,615</td>
-                    </tr>
-                    <tr>
-                      <td>Jon Porter</td>
-                      <td>Portugal</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$98,615</td>
-                    </tr>
+                      <td>Quần ống loe</td>
+                      <td>Xanh nhạt, Xanh đậm</td>
+                      <td>Quần</td>
+                      <td className="text-right">$40,500</td>
+                    </tr>                           
                   </tbody>
                 </Table>
               </CardBody>
