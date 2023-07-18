@@ -108,6 +108,7 @@ function Header(props) {
               </InputGroupAddon>
             </InputGroup>
           </form>
+          
         </Collapse>
       </Container>
     </Navbar>
