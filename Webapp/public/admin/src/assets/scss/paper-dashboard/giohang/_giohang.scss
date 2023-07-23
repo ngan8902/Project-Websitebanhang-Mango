@@ -1,0 +1,29 @@
+.modal-content{
+    color: $new-brown;
+    background-color: #efcece;
+    margin-top: 53px;
+
+
+    .modal-body{
+        height: 200px;
+        .setop{
+            display: grid;
+            margin-left: 15px;
+            select{
+                width: 100px;
+                height: 25px;
+            }
+        }
+        .inp{
+            display: flex;
+            margin-top: 20px;
+        }
+    }
+
+    .modal-footer{
+        height: 70px;
+        .btn-themsp,.btn-xoasp,.btn-suasp{
+            margin-top: 5px;
+        }
+    }
+}

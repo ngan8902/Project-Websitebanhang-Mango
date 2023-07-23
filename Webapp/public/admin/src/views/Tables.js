@@ -1,6 +1,6 @@
-import React from "react";
+import * as React from "react";
+import { FaShoppingCart } from "react-icons/fa";
 
-// reactstrap components
 import {
   Card,
   CardHeader,
@@ -9,9 +9,32 @@ import {
   Table,
   Row,
   Col,
+  Button,
+  Modal,
+  ModalHeader, ModalBody, ModalFooter
 } from "reactstrap";
 
 function Tables() {
+  const [open, setOpen] = React.useState(false);
+  const [edit, setEdit] = React.useState("show");
+
+  let handleClickOpen = () => {
+    setOpen(true);
+    console.log(1)
+  }
+
+  let handleClickClose = () => {
+    setOpen(false);
+  }
+
+  // let handleClickEdit = () => {
+  //   if (edit === "show") {
+  //     setEdit("show show");
+  //   } else {
+  //     setEdit("show");
+  //   }
+  // }
+
   return (
     <>
       <div className="content">
@@ -20,10 +43,13 @@ function Tables() {
             <Card>
               <CardHeader>
                 <CardTitle tag="h4">Các sản phẩm</CardTitle>
+                <button className="btn-giohang" onClick={handleClickOpen}>
+                  <FaShoppingCart></FaShoppingCart>
+                </button>
               </CardHeader>
               <CardBody>
                 <Table responsive>
-                  <thead className="text-primary">
+                  <thead className="text-list">
                     <tr>
                       <th>Sản phẩm</th>
                       <th>Màu</th>
@@ -61,25 +87,70 @@ function Tables() {
                       <td>Đen, Xám</td>
                       <td>Set</td>
                       <td className="text-right">$63,542</td>
-                    </tr>   
+                    </tr>
                     <tr>
                       <td>Quần Jean</td>
                       <td>Đen, Xanh Đen</td>
                       <td>Quần</td>
                       <td className="text-right">$50,000</td>
-                    </tr>       
+                    </tr>
                     <tr>
                       <td>Quần ống loe</td>
                       <td>Xanh nhạt, Xanh đậm</td>
                       <td>Quần</td>
                       <td className="text-right">$40,500</td>
-                    </tr>                           
+                    </tr>
                   </tbody>
                 </Table>
               </CardBody>
             </Card>
           </Col>
         </Row>
+        <div className="giohang">
+          <Modal isOpen={open} toggle={handleClickClose} >
+            <ModalHeader toggle={handleClickClose}>Chỉnh Sửa Danh Sách Sản Phẩm</ModalHeader>
+            <ModalBody className="row col-8">
+              <label className="setop">
+                Loại:
+                <select name="selectedLoai">
+                  <option value="ao">Áo</option>
+                  <option value="quan">Quần</option>
+                  <option value="chanvay">Chân Váy</option>
+                  <option value="dam">Đầm</option>
+                  <option value="set">Set</option>
+                </select>
+              </label>
+
+              <div className="inp">
+                <div className="col">
+                  Sản Phẩm:<br></br>
+                  <input type="text" placeholder="Nhập tên sản phẩm" className="inp-tensp"></input>
+                </div>
+                <div className="col">
+                  Màu:<br></br>
+                  <input type="text" placeholder="Màu của sản phẩm" className="inp-mau"></input>
+                </div>
+              </div>
+              {' '}
+              <div className="col">
+                Giá:<br></br>
+                <input type="text" placeholder="$" className="inp-gia"></input>
+              </div>
+
+            </ModalBody>
+            <ModalFooter className="modal-footer">
+              <Button style={{ backgroundColor: '#1F77D0' }} className="btn-themsp" >
+                Thêm
+              </Button>{' '}
+              <Button style={{ backgroundColor: '#FB404B' }} className="btn-xoasp" >
+                Xóa
+              </Button>{' '}
+              <Button style={{ backgroundColor: '#d88715' }} className="btn-suasp">
+                Sửa
+              </Button>
+            </ModalFooter>
+          </Modal>
+        </div>
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import Notifications from "views/Notifications.js";
 import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
 import UserPage from "views/User.js";
+import { Navigate } from "react-router-dom";
 
 var routes = [
   {
@@ -38,6 +39,11 @@ var routes = [
     name: "Bản đồ",
     icon: "nc-icon nc-pin-3",
     component: <Maps />,
+    layout: "/admin",
+  },
+  {
+    path: "*",
+    component: <Navigate to="/admin/dashboard" replace={true} />,
     layout: "/admin",
   },
 ];

@@ -8,14 +8,32 @@ import "assets/demo/demo.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import AdminLayout from "layouts/Admin.js";
+import Login from "views/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/admin/*" element={<AdminLayout />} />
-      <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
-    </Routes>
-  </BrowserRouter>
-);
+// lay token trong localStore -> gui xuong server thong qua api -> check token nay cho phep dang nhan khong 
+  // -> token hop le: set authen bang true
+  // -> token ko hop le: xoa token khoi localStore va authen la false
+let authen = true;
+if(authen) {
+  root.render(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/admin/*" element={<AdminLayout />} />
+        <Route path="/" element={<Navigate to="/admin/dashboard" replace/>} />
+      </Routes>
+    </BrowserRouter>
+  );
+} else {
+  root.render(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/admin/login" element={<Login />} />
+        <Route path="/admin/*" element={<Navigate to="/admin/login"  />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+
