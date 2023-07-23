@@ -19,6 +19,7 @@ import React from "react";
 
 // reactstrap components
 import { Container } from "reactstrap";
+
 import Swiper from "swiper";
 import { Navigation, Pagination } from 'swiper/modules';
 // import Swiper and modules styles

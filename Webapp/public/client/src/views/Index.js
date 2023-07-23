@@ -21,7 +21,7 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
-
+import BodyCard from "components/body/BodyCard.js";
 // sections for this page/view
 import Basics from "views/IndexSections/Basics.js";
 import Navbars from "views/IndexSections/Navbars.js";
@@ -34,6 +34,7 @@ import NucleoIcons from "views/IndexSections/NucleoIcons.js";
 import Signup from "views/IndexSections/Signup.js";
 import Examples from "views/IndexSections/Examples.js";
 import Download from "views/IndexSections/Download.js";
+
 
 export default function Index() {
   React.useEffect(() => {
@@ -49,10 +50,12 @@ export default function Index() {
       <div className="wrapper">
         <PageHeader />
         <div className="main">
-          <Basics />
+         
+          {/* <Basics />
           <Navbars />
           <Tabs />
-          <Pagination />
+          <Pagination /> */}
+         <BodyCard />
           <Notifications />
           <Typography />
           <JavaScript />
