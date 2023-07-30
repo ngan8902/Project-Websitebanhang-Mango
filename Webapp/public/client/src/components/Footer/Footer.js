@@ -35,7 +35,7 @@ export default function Footer() {
       <Container>
         <Row>
           <Col md="3">
-            <h1 className="title">BLK•</h1>
+            <h1 className="title">MANGO</h1>
           </Col>
           <Col md="3">
             <Nav>
@@ -64,24 +64,12 @@ export default function Footer() {
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink href="https://creative-tim.com/contact-us?ref=blkdsr-footer">
+                <NavLink>
                   Contact Us
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://creative-tim.com/about-us?ref=blkdsr-footer">
-                  About Us
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://creative-tim.com/blog?ref=blkdsr-footer">
-                  Blog
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://opensource.org/licenses/MIT">
-                  License
-                </NavLink>
+               <span style={{color: "white"}}> Telephone: +849 351 950 87</span>
               </NavItem>
             </Nav>
           </Col>

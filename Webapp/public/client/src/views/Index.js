@@ -21,6 +21,7 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
+import Bodytab from "components/body/Bodytab.js";
 import BodyCard from "components/body/BodyCard.js";
 // sections for this page/view
 import Basics from "views/IndexSections/Basics.js";
@@ -53,16 +54,19 @@ export default function Index() {
          
           {/* <Basics />
           <Navbars />
-          <Tabs />
-          <Pagination /> */}
-         <BodyCard />
+  <Tabs />*/}
+          
+          <BodyCard />
+          <Bodytab/>
+           {/* <Pagination />  
           <Notifications />
           <Typography />
           <JavaScript />
           <NucleoIcons />
           <Signup />
           <Examples />
-          <Download />
+          <Download />  */}
+
         </div>
         <Footer />
       </div>
