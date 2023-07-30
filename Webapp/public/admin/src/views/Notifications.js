@@ -1,22 +1,3 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-/*eslint-disable*/
 import React from "react";
 // react plugin for creating notifications over the dashboard
 import NotificationAlert from "react-notification-alert";
@@ -82,72 +63,21 @@ function Notifications() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h5">Notifications</CardTitle>
+                <CardTitle tag="h5">Các thông báo</CardTitle>
                 <p className="card-category">
-                  Handcrafted by our former colleague{" "}
+                  
                   <a
-                    target="_blank"
-                    href="https://www.instagram.com/manu.nazare/"
-                  >
-                    Nazare Emanuel-Ioan (Manu)
-                  </a>
-                  . Please checkout the{" "}
-                  <a
-                    href="https://github.com/creativetimofficial/react-notification-alert"
+                    href="https://github.com/ngan8902/Project-Websitebanhang-.git"
                     target="_blank"
                   >
-                    full documentation.
+                    Full documentation.
                   </a>
                 </p>
               </CardHeader>
               <CardBody>
                 <Row>
-                  <Col md="6">
-                    <Card className="card-plain">
-                      <CardHeader>
-                        <CardTitle tag="h5">Notifications Style</CardTitle>
-                      </CardHeader>
-                      <CardBody>
-                        <Alert color="info">
-                          <span>This is a plain notification</span>
-                        </Alert>
-                        <UncontrolledAlert color="info" fade={false}>
-                          <span>This is a notification with close button.</span>
-                        </UncontrolledAlert>
-                        <UncontrolledAlert
-                          className="alert-with-icon"
-                          color="info"
-                          fade={false}
-                        >
-                          <span
-                            data-notify="icon"
-                            className="nc-icon nc-bell-55"
-                          />
-                          <span data-notify="message">
-                            This is a notification with close button and icon.
-                          </span>
-                        </UncontrolledAlert>
-                        <UncontrolledAlert
-                          className="alert-with-icon"
-                          color="info"
-                          fade={false}
-                        >
-                          <span
-                            data-notify="icon"
-                            className="nc-icon nc-chart-pie-36"
-                          />
-                          <span data-notify="message">
-                            This is a notification with close button and icon
-                            and have many lines. You can see that the icon and
-                            the close button are always vertically aligned. This
-                            is a beautiful notification. So you don't have to
-                            worry about the style.
-                          </span>
-                        </UncontrolledAlert>
-                      </CardBody>
-                    </Card>
-                  </Col>
-                  <Col md="6">
+                 
+                  <Col md="12">
                     <Card className="card-plain">
                       <CardHeader>
                         <CardTitle tag="h5">Notification states</CardTitle>

@@ -1,24 +1,6 @@
-/*!
+import * as React from "react";
+import { FaShoppingCart } from "react-icons/fa";
 
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
-
-// reactstrap components
 import {
   Card,
   CardHeader,
@@ -27,9 +9,32 @@ import {
   Table,
   Row,
   Col,
+  Button,
+  Modal,
+  ModalHeader, ModalBody, ModalFooter
 } from "reactstrap";
 
 function Tables() {
+  const [open, setOpen] = React.useState(false);
+  const [edit, setEdit] = React.useState("show");
+
+  let handleClickOpen = () => {
+    setOpen(true);
+    console.log(1)
+  }
+
+  let handleClickClose = () => {
+    setOpen(false);
+  }
+
+  // let handleClickEdit = () => {
+  //   if (edit === "show") {
+  //     setEdit("show show");
+  //   } else {
+  //     setEdit("show");
+  //   }
+  // }
+
   return (
     <>
       <div className="content">
@@ -37,126 +42,63 @@ function Tables() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h4">Simple Table</CardTitle>
+                <CardTitle tag="h4">Các sản phẩm</CardTitle>
+                <button className="btn-giohang" onClick={handleClickOpen}>
+                  <FaShoppingCart></FaShoppingCart>
+                </button>
               </CardHeader>
               <CardBody>
                 <Table responsive>
-                  <thead className="text-primary">
+                  <thead className="text-list">
                     <tr>
-                      <th>Name</th>
-                      <th>Country</th>
-                      <th>City</th>
-                      <th className="text-right">Salary</th>
+                      <th>Sản phẩm</th>
+                      <th>Màu</th>
+                      <th>Loại</th>
+                      <th className="text-right">Giá</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Dakota Rice</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
+                      <td>Áo sơ mi</td>
+                      <td>Xanh, Đỏ, Trắng, Đen</td>
+                      <td>Áo</td>
                       <td className="text-right">$36,738</td>
                     </tr>
                     <tr>
-                      <td>Minerva Hooper</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
+                      <td>Đầm body</td>
+                      <td>Đen, Trắng</td>
+                      <td>Đầm</td>
                       <td className="text-right">$23,789</td>
                     </tr>
                     <tr>
-                      <td>Sage Rodriguez</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
+                      <td>Váy xếp ly</td>
+                      <td>Trắng, Đen, Xanh, Be</td>
+                      <td>Chân váy</td>
                       <td className="text-right">$56,142</td>
                     </tr>
                     <tr>
-                      <td>Philip Chaney</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
+                      <td>Áo crop-top</td>
+                      <td>Ghi, Xám, Hồng</td>
+                      <td>Áo</td>
                       <td className="text-right">$38,735</td>
                     </tr>
                     <tr>
-                      <td>Doris Greene</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
+                      <td>Set đồ thể thao</td>
+                      <td>Đen, Xám</td>
+                      <td>Set</td>
                       <td className="text-right">$63,542</td>
                     </tr>
                     <tr>
-                      <td>Mason Porter</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$78,615</td>
+                      <td>Quần Jean</td>
+                      <td>Đen, Xanh Đen</td>
+                      <td>Quần</td>
+                      <td className="text-right">$50,000</td>
                     </tr>
                     <tr>
-                      <td>Jon Porter</td>
-                      <td>Portugal</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$98,615</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col md="12">
-            <Card className="card-plain">
-              <CardHeader>
-                <CardTitle tag="h4">Table on Plain Background</CardTitle>
-                <p className="card-category">
-                  Here is a subtitle for this table
-                </p>
-              </CardHeader>
-              <CardBody>
-                <Table responsive>
-                  <thead className="text-primary">
-                    <tr>
-                      <th>Name</th>
-                      <th>Country</th>
-                      <th>City</th>
-                      <th className="text-right">Salary</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Dakota Rice</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
-                      <td className="text-right">$36,738</td>
-                    </tr>
-                    <tr>
-                      <td>Minerva Hooper</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                      <td className="text-right">$23,789</td>
-                    </tr>
-                    <tr>
-                      <td>Sage Rodriguez</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                      <td className="text-right">$56,142</td>
-                    </tr>
-                    <tr>
-                      <td>Philip Chaney</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                      <td className="text-right">$38,735</td>
-                    </tr>
-                    <tr>
-                      <td>Doris Greene</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                      <td className="text-right">$63,542</td>
-                    </tr>
-                    <tr>
-                      <td>Mason Porter</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$78,615</td>
-                    </tr>
-                    <tr>
-                      <td>Jon Porter</td>
-                      <td>Portugal</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$98,615</td>
+                      <td>Quần ống loe</td>
+                      <td>Xanh nhạt, Xanh đậm</td>
+                      <td>Quần</td>
+                      <td className="text-right">$40,500</td>
                     </tr>
                   </tbody>
                 </Table>
@@ -164,6 +106,51 @@ function Tables() {
             </Card>
           </Col>
         </Row>
+        <div className="giohang">
+          <Modal isOpen={open} toggle={handleClickClose} >
+            <ModalHeader toggle={handleClickClose}>Chỉnh Sửa Danh Sách Sản Phẩm</ModalHeader>
+            <ModalBody className="row col-8">
+              <label className="setop">
+                Loại:
+                <select name="selectedLoai">
+                  <option value="ao">Áo</option>
+                  <option value="quan">Quần</option>
+                  <option value="chanvay">Chân Váy</option>
+                  <option value="dam">Đầm</option>
+                  <option value="set">Set</option>
+                </select>
+              </label>
+
+              <div className="inp">
+                <div className="col">
+                  Sản Phẩm:<br></br>
+                  <input type="text" placeholder="Nhập tên sản phẩm" className="inp-tensp"></input>
+                </div>
+                <div className="col">
+                  Màu:<br></br>
+                  <input type="text" placeholder="Màu của sản phẩm" className="inp-mau"></input>
+                </div>
+              </div>
+              {' '}
+              <div className="col">
+                Giá:<br></br>
+                <input type="text" placeholder="$" className="inp-gia"></input>
+              </div>
+
+            </ModalBody>
+            <ModalFooter className="modal-footer">
+              <Button style={{ backgroundColor: '#1F77D0' }} className="btn-themsp" >
+                Thêm
+              </Button>{' '}
+              <Button style={{ backgroundColor: '#FB404B' }} className="btn-xoasp" >
+                Xóa
+              </Button>{' '}
+              <Button style={{ backgroundColor: '#d88715' }} className="btn-suasp">
+                Sửa
+              </Button>
+            </ModalFooter>
+          </Modal>
+        </div>
       </div>
     </>
   );

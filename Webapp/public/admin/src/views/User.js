@@ -1,22 +1,7 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
+import { useState } from "react";
+import logo from "Backgr-pink.svg";
+import PhoneInput from 'react-phone-input-2'
 
 // reactstrap components
 import {
@@ -34,6 +19,7 @@ import {
 } from "reactstrap";
 
 function User() {
+  const [phonenumber, setPhonenumber] = useState('')
   return (
     <>
       <div className="content">
@@ -41,23 +27,28 @@ function User() {
           <Col md="4">
             <Card className="card-user">
               <div className="image">
-                <img alt="..." src={require("assets/img/damir-bosnjak.jpg")} />
+                <img alt="..." src={logo} />
               </div>
               <CardBody>
                 <div className="author">
-                  <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                  <a href="#bn">
                     <img
                       alt="..."
                       className="avatar border-gray"
-                      src={require("assets/img/mike.jpg")}
+                      src={require("assets/img/kid-design.png")}
                     />
-                    <h5 className="title">Chet Faker</h5>
+                    {/* <div class="image-upload">
+                      <label for="file-input">
+                        <img src={camera}/>
+                      </label>
+                      <input id="file-input" type="file" />
+                    </div> */}
+                    <h5 className="title">Bích Ngân</h5>
                   </a>
-                  <p className="description">@chetfaker</p>
+                  <p className="description">@bichngan</p>
                 </div>
                 <p className="description text-center">
-                  "I like the way you work it <br />
-                  No diggity <br />I wanna bag it up"
+                  "Hi!"
                 </p>
               </CardBody>
               <CardFooter>
@@ -86,116 +77,20 @@ function User() {
                 </div>
               </CardFooter>
             </Card>
-            <Card>
-              <CardHeader>
-                <CardTitle tag="h4">Team Members</CardTitle>
-              </CardHeader>
-              <CardBody>
-                <ul className="list-unstyled team-members">
-                  <li>
-                    <Row>
-                      <Col md="2" xs="2">
-                        <div className="avatar">
-                          <img
-                            alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/ayo-ogunseinde-2.jpg")}
-                          />
-                        </div>
-                      </Col>
-                      <Col md="7" xs="7">
-                        DJ Khaled <br />
-                        <span className="text-muted">
-                          <small>Offline</small>
-                        </span>
-                      </Col>
-                      <Col className="text-right" md="3" xs="3">
-                        <Button
-                          className="btn-round btn-icon"
-                          color="success"
-                          outline
-                          size="sm"
-                        >
-                          <i className="fa fa-envelope" />
-                        </Button>
-                      </Col>
-                    </Row>
-                  </li>
-                  <li>
-                    <Row>
-                      <Col md="2" xs="2">
-                        <div className="avatar">
-                          <img
-                            alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/joe-gardner-2.jpg")}
-                          />
-                        </div>
-                      </Col>
-                      <Col md="7" xs="7">
-                        Creative Tim <br />
-                        <span className="text-success">
-                          <small>Available</small>
-                        </span>
-                      </Col>
-                      <Col className="text-right" md="3" xs="3">
-                        <Button
-                          className="btn-round btn-icon"
-                          color="success"
-                          outline
-                          size="sm"
-                        >
-                          <i className="fa fa-envelope" />
-                        </Button>
-                      </Col>
-                    </Row>
-                  </li>
-                  <li>
-                    <Row>
-                      <Col md="2" xs="2">
-                        <div className="avatar">
-                          <img
-                            alt="..."
-                            className="img-circle img-no-padding img-responsive"
-                            src={require("assets/img/faces/clem-onojeghuo-2.jpg")}
-                          />
-                        </div>
-                      </Col>
-                      <Col className="col-ms-7" xs="7">
-                        Flume <br />
-                        <span className="text-danger">
-                          <small>Busy</small>
-                        </span>
-                      </Col>
-                      <Col className="text-right" md="3" xs="3">
-                        <Button
-                          className="btn-round btn-icon"
-                          color="success"
-                          outline
-                          size="sm"
-                        >
-                          <i className="fa fa-envelope" />
-                        </Button>
-                      </Col>
-                    </Row>
-                  </li>
-                </ul>
-              </CardBody>
-            </Card>
           </Col>
           <Col md="8">
             <Card className="card-user">
               <CardHeader>
-                <CardTitle tag="h5">Edit Profile</CardTitle>
+                <CardTitle tag="h5">Chỉnh sửa thông tin</CardTitle>
               </CardHeader>
               <CardBody>
                 <Form>
                   <Row>
                     <Col className="pr-1" md="5">
                       <FormGroup>
-                        <label>Company (disabled)</label>
+                        <label>Công ty (không được sửa)</label>
                         <Input
-                          defaultValue="Creative Code Inc."
+                          defaultValue="Chinta Inc."
                           disabled
                           placeholder="Company"
                           type="text"
@@ -204,10 +99,10 @@ function User() {
                     </Col>
                     <Col className="px-1" md="3">
                       <FormGroup>
-                        <label>Username</label>
+                        <label>Tên người dùng</label>
                         <Input
-                          defaultValue="michael23"
-                          placeholder="Username"
+                          defaultValue="bichngan8902"
+                          placeholder="Tên người dùng"
                           type="text"
                         />
                       </FormGroup>
@@ -215,29 +110,29 @@ function User() {
                     <Col className="pl-1" md="4">
                       <FormGroup>
                         <label htmlFor="exampleInputEmail1">
-                          Email address
+                          Địa Chỉ Email
                         </label>
-                        <Input placeholder="Email" type="email" />
+                        <Input placeholder="Email@gmail.com" type="email" />
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
                     <Col className="pr-1" md="6">
                       <FormGroup>
-                        <label>First Name</label>
+                        <label>Họ</label>
                         <Input
-                          defaultValue="Chet"
-                          placeholder="Company"
+                          defaultValue="Nguyễn"
+                          placeholder="Họ"
                           type="text"
                         />
                       </FormGroup>
                     </Col>
                     <Col className="pl-1" md="6">
                       <FormGroup>
-                        <label>Last Name</label>
+                        <label>Tên</label>
                         <Input
-                          defaultValue="Faker"
-                          placeholder="Last Name"
+                          defaultValue="Ngân"
+                          placeholder="Tên"
                           type="text"
                         />
                       </FormGroup>
@@ -246,10 +141,10 @@ function User() {
                   <Row>
                     <Col md="12">
                       <FormGroup>
-                        <label>Address</label>
+                        <label>Địa chỉ</label>
                         <Input
-                          defaultValue="Melbourne, Australia"
-                          placeholder="Home Address"
+                          defaultValue="11/3Abis Đ.NVQ P.ĐHT Q.12"
+                          placeholder="Địa chỉ nhà"
                           type="text"
                         />
                       </FormGroup>
@@ -258,38 +153,41 @@ function User() {
                   <Row>
                     <Col className="pr-1" md="4">
                       <FormGroup>
-                        <label>City</label>
+                        <label>Thành Phố</label>
                         <Input
-                          defaultValue="Melbourne"
-                          placeholder="City"
+                          defaultValue="Hồ Chí Minh"
+                          placeholder="Thành Phố"
                           type="text"
                         />
                       </FormGroup>
                     </Col>
                     <Col className="px-1" md="4">
                       <FormGroup>
-                        <label>Country</label>
+                        <label>Quốc Gia</label>
                         <Input
-                          defaultValue="Australia"
-                          placeholder="Country"
+                          defaultValue="Việt Nam"
+                          placeholder="Quốc Gia"
                           type="text"
                         />
                       </FormGroup>
                     </Col>
                     <Col className="pl-1" md="4">
                       <FormGroup>
-                        <label>Postal Code</label>
-                        <Input placeholder="ZIP Code" type="number" />
+                        <PhoneInput 
+                          placeholder="Nhập số điện thoại"
+                          country={'VN'}
+                          value={phonenumber}
+                          onChange={setPhonenumber} />
                       </FormGroup>
                     </Col>
                   </Row>
                   <Row>
                     <Col md="12">
                       <FormGroup>
-                        <label>About Me</label>
+                        <label>Tiểu sử.</label>
                         <Input
                           type="textarea"
-                          defaultValue="Oh so, your weak rhyme You doubt I'll bother, reading into it"
+                          defaultValue="Tôi là sinh viên năm 3 tại trường Đại học Công Nghiệp"
                         />
                       </FormGroup>
                     </Col>
@@ -301,7 +199,7 @@ function User() {
                         color="primary"
                         type="submit"
                       >
-                        Update Profile
+                        Cập nhật thông tin
                       </Button>
                     </div>
                   </Row>
