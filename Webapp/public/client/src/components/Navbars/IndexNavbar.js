@@ -15,13 +15,16 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+
 
 
 // reactstrap components
 import {
-  Button,
+
   Collapse,
   DropdownToggle,
   DropdownMenu,
@@ -42,6 +45,11 @@ export default function IndexNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
   const [color, setColor] = React.useState("navbar-transparent");
+  // const { className } = props;
+
+  const [modal, setModal] = useState(false);
+
+  const toggle = () => setModal(!modal);
   React.useEffect(() => {
     window.addEventListener("scroll", changeColor);
     return function cleanup() {
@@ -81,8 +89,8 @@ export default function IndexNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
-            <span>MINA </span>   
-            
+            <span>MINA </span>
+
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
             Designed and Coded by Creative Tim
@@ -106,37 +114,78 @@ export default function IndexNavbar() {
         >
           <div className="navbar-collapse-header">
             <Row>
-            {/* <Col className="collapse-brand" xs="6">
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                   BLKReact 
-                
-                </a>
-              </Col>
-              <Col className="collapse-close text-right" xs="6">
-                <button
-                  aria-expanded={collapseOpen}
-                  className="navbar-toggler"
-                  onClick={toggleCollapse}
-                >
-                  <i className="tim-icons icon-simple-remove" />
-                </button>
-              </Col> */}
+
             </Row>
           </div>
           <Nav navbar>
-            
-             <NavItem className="p-0">
+
+            <NavItem className="p-0">
               <NavLink
                 data-placement="bottom"
-                href="https://www.instagram.com/CreativeTimOfficial"
+
+                onClick={toggle}
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Follow us on Instagram"
               >
                 <i className="fa-sharp fa-solid fa-cart-shopping" />
-              
+
               </NavLink>
-            </NavItem> 
+            </NavItem>
+
+            {/* Modalheader */}
+            <div className="modalheader">
+              <Modal
+                isOpen={modal}
+                modalTransition={{ timeout: 700 }}
+                backdropTransition={{ timeout: 1300 }}
+                toggle={toggle}
+style={{padding:"30px"}}
+              >
+                <ModalHeader toggle={toggle} style={{ textAlign: "center", backgroundColor: "black", color: "white" }}>CARD SHOPPING</ModalHeader>
+                <ModalBody>
+                  <Row>
+                    <Col sm="4">
+                      <img width="100%" src={require('../../assets/img/product1.jpg')} alt="Card image cap"></img>
+                    </Col>
+                    <Col sm="4" style={{margin:"auto"}}>
+                     
+                      <h5>Veston for Business</h5>
+                      <p>110 $</p>
+                    
+                     
+                    </Col>
+                    <Col sm="4" style={{margin:"auto"}}>
+                      <Button color='danger'>Delete</Button>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col sm="4">
+                      <img width="100%" src={require('../../assets/img/product3.jpg')} alt="Card image cap"></img>
+                    </Col>
+                    <Col sm="4" style={{margin:"auto"}}>
+                     
+                      <h5>Veston for Business</h5>
+                      <p>125 $</p>
+                    
+                     
+                    </Col>
+                    <Col sm="4" style={{margin:"auto"}}>
+                      <Button color='danger'>Delete</Button>
+                    </Col>
+                  </Row>
+
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="success" onClick={toggle}>
+                    Payment
+                  </Button>{' '}
+                  <Button color="danger" onClick={toggle}>
+                    Cancel
+                  </Button>
+                </ModalFooter>
+              </Modal>
+            </div>
             <UncontrolledDropdown nav>
               <DropdownToggle
                 caret
@@ -187,5 +236,8 @@ export default function IndexNavbar() {
         </Collapse>
       </Container>
     </Navbar>
+
+
   );
 }
+

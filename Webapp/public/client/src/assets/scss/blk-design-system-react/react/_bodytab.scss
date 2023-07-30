@@ -43,7 +43,7 @@
     font-weight: 700;
     background-color: #878787;
     border: 1px solid #f7f8fb;
-    border-radius: 30px;
+   
     padding: 11px 23px;
     line-height: 1.5;
     cursor: pointer;
@@ -52,9 +52,9 @@
 
 
 .content .nav-tabs > .nav-item > .nav-link:hover {
-    background-color: #fbe0e0fa;
-    border: 1px solid #191f31;
-    color: rgb(245 67 67 / 91%);
+    
+  
+    color: rgba(83, 83, 83, 0.91);
 }
 .card-body{
     background-color: white;
@@ -62,14 +62,14 @@
 .card-product .card-content{
     text-align: center;
 }
-.card .card-body .card-title {
-    color: #000000;
+.card .card-body  .card-title {
+    color: #000000 !important;
     text-transform: inherit;
     font-weight: 500;
     margin-bottom: 0.75rem;
     letter-spacing: .25px;}
     .card .card-body .card-title .card-subtitle{
-        color: #948e8e;
+        color: #948e8e !important;
         text-transform: inherit;
         font-weight: 500;
         margin-bottom: 0.75rem;

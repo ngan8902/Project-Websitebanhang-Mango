@@ -25,8 +25,7 @@ export default function Bodytab() {
                     <h2 className="title">
                         TRENDY CLOTHING
                     </h2>
-                    <p>Trending</p>
-                    <h4>ReactJS Reactstrap Tab Component</h4>
+                    
                 </div>
 
 
@@ -45,7 +44,7 @@ export default function Bodytab() {
                                 })}
                                 onClick={() => { toggle('1'); }}
                             >
-                                Tab1
+                                New
                             </NavLink>
                         </NavItem>
                         <NavItem className='nav-link'>
@@ -56,7 +55,7 @@ export default function Bodytab() {
                                 })}
                                 onClick={() => { toggle('2'); }}
                             >
-                                Tab2
+                                Classic
                             </NavLink>
                         </NavItem>
                         <NavItem className='nav-link'>
@@ -67,7 +66,7 @@ export default function Bodytab() {
                                 })}
                                 onClick={() => { toggle('3'); }}
                             >
-                                Tab3
+                                Old
                             </NavLink>
                         </NavItem>
                     </Nav>
@@ -75,41 +74,273 @@ export default function Bodytab() {
                         <TabPane tabId="1">
                             <Row>
                                 <Col sm="3">
-                                    <div>
+                                    <div >
                                         <Card >
                                             <CardImg top width="100%" src={require('../../assets/img/product1.jpg')} alt="Card image cap" />
                                             <div className='card-product'>
+                                           
                                             <CardBody >
-                                                <div className='card-content'>
-                                                <CardTitle className='card-title'>MAN</CardTitle>
-                                                <CardSubtitle className='card-title' >Veston for Business</CardSubtitle>
-                                                <CardText className='card-price'>110 $</CardText>
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>MAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>110 $</CardText>
                                                 <Button>Add to card </Button>
                                                 </div>
                                                
                                             </CardBody>
+                                            
                                             </div>
                                           
                                         </Card>
                                     </div>
                                 </Col>
-                               
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product2.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>WOMEN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>120 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product3.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>MAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>110 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product4.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>WOMAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Shirt for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>125 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
                                 
                                 
                             </Row>
                         </TabPane>
                         <TabPane tabId="2">
+                           
                             <Row>
-                                <Col sm="12">
-                                    <h5>Sample Tab 2 Content</h5>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product4.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>MAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>110 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
                                 </Col>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product3.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>WOMEN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>120 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product2.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>MAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>110 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product1.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>WOMAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Shirt for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>125 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
+                                
+                                
                             </Row>
+                            
                         </TabPane>
                         <TabPane tabId="3">
-                            <Row>
-                                <Col sm="12">
-                                    <h5>Sample Tab 3 Content</h5>
+                        <Row>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product1.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>MAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>110 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
                                 </Col>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product2.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>WOMEN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>120 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product3.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>MAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Veston for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>110 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
+                                <Col sm="3">
+                                    <div >
+                                        <Card >
+                                            <CardImg top width="100%" src={require('../../assets/img/product4.jpg')} alt="Card image cap" />
+                                            <div className='card-product'>
+                                           
+                                            <CardBody >
+                                            <div className='card-content'>
+                                                <CardTitle className='card-title '>WOMAN</CardTitle>
+                                                <CardSubtitle className='card-title ' >Shirt for Business</CardSubtitle>
+                                                <CardText className='card-price card-text'>125 $</CardText>
+                                                <Button>Add to card </Button>
+                                                </div>
+                                               
+                                            </CardBody>
+                                            
+                                            </div>
+                                          
+                                        </Card>
+                                    </div>
+                                </Col>
+                                
+                                
                             </Row>
                         </TabPane>
                     </TabContent>
