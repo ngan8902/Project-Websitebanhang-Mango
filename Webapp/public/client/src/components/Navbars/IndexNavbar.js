@@ -89,7 +89,7 @@ export default function IndexNavbar() {
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/" tag={Link} id="navbar-brand">
-            <span>MINA </span>
+            <span style={{border:"1px solid"}}>MANGO</span>
 
           </NavbarBrand>
           <UncontrolledTooltip placement="bottom" target="navbar-brand">
@@ -177,7 +177,7 @@ style={{padding:"30px"}}
 
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="success" onClick={toggle}>
+                  <Button color="success"  tag={Link} to="/profile-page">
                     Payment
                   </Button>{' '}
                   <Button color="danger" onClick={toggle}>
@@ -199,17 +199,21 @@ style={{padding:"30px"}}
                 Menu
               </DropdownToggle>
               <DropdownMenu className="dropdown-with-icons">
+              <DropdownItem tag={Link} to="/">
+                  <i className="tim-icons icon-bullet-list-67" />
+                  Home Page
+                </DropdownItem>
                 <DropdownItem tag={Link} to="/register-page">
                   <i className="tim-icons icon-bullet-list-67" />
                   Register Page
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/landing-page">
+                <DropdownItem tag={Link} to="/login-page">
                   <i className="tim-icons icon-image-02" />
-                  Landing Page
+                   Login Page
                 </DropdownItem>
                 <DropdownItem tag={Link} to="/profile-page">
                   <i className="tim-icons icon-single-02" />
-                  Profile Page
+                  Payment Page
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

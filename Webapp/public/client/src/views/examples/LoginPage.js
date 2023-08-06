@@ -15,6 +15,9 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+
+// react plugin used to create charts
+import { Line } from "react-chartjs-2";
 import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import { Link } from "react-router-dom";
@@ -26,8 +29,13 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  CardImg,
   CardTitle,
+  ListGroupItem,
+  ListGroup,
+  Container,
+  Row,
+  Col,
+  CardImg,
   Label,
   FormGroup,
   Form,
@@ -35,9 +43,6 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  Container,
-  Row,
-  Col,
   Navbar,
   NavItem,
   NavLink,
@@ -45,10 +50,12 @@ import {
 } from "reactstrap";
 
 // core components
-
+import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import Footer from "components/Footer/Footer.js";
 
-export default function RegisterPage() {
+import bigChartData from "variables/charts.js";
+
+export default function LandingPage() {
   const [squares1to6, setSquares1to6] = React.useState("");
   const [squares7and8, setSquares7and8] = React.useState("");
   const [fullNameFocus, setFullNameFocus] = React.useState(false);
@@ -83,16 +90,23 @@ export default function RegisterPage() {
   };
   return (
     <>
-      <IndexNavbar />
+<IndexNavbar />
       <div className="wrapper">
         <div className="page-header" style={{backgroundImage:
                'url("https://ongnhuahdpevietnam.com/wp-content/uploads/2022/08/hinh-nen-trang-2k-1536x864.jpg")',
                backgroundSize: "contain"
               }}>
+      
           <div className="page-header-image" />
           <div className="content"  >
             <Container >
               <Row>
+              <Col>
+               
+               <img src={require('../../assets/img/login2.jpg')} alt="" />
+               <h1 style={{marginTop: "20px"}}> Join Our Company</h1>
+               <h4>You will have the opportunity to receive many great deals</h4>
+               </Col>
                 <Col className="offset-lg-0 offset-md-3" lg="5" md="6">
                   <Card className="card-register">
                     <CardHeader>
@@ -100,11 +114,12 @@ export default function RegisterPage() {
                         alt="..."
                         src={require("assets/img/square-purple-1.png")}
                       />
-                      <CardTitle tag="h4" style={{marginLeft:"2px",textAlign:"center",color:"white"}}>Register</CardTitle>
+                      <CardTitle tag="h4" style={{marginLeft:"2px",textAlign:"center",color:"white"}}>
+                        Login</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form className="form">
-                        <InputGroup
+                        {/* <InputGroup
                           className={classnames({
                             "input-group-focus": fullNameFocus,
                           })}
@@ -120,7 +135,7 @@ export default function RegisterPage() {
                             onFocus={(e) => setFullNameFocus(true)}
                             onBlur={(e) => setFullNameFocus(false)}
                           />
-                        </InputGroup>
+                        </InputGroup> */}
                         <InputGroup
                           className={classnames({
                             "input-group-focus": emailFocus,
@@ -172,23 +187,19 @@ export default function RegisterPage() {
                     
                     </CardBody>
                     <CardFooter>
+
                       <Button className="btn-round" color="primary" size="lg">
                         Get Started
                       </Button>
-                      <NavLink tag={Link} to="/login-page">
-                Have an account ? Login
+                      <NavLink tag={Link} to="/register-page">
+                Don't have an account ?  Sign up
               </NavLink>
                     </CardFooter>
                   </Card>
 
                   
                 </Col>
-                <Col>
-               
-                <img src={require('../../assets/img/login1.jpg')} alt="" />
-                <h1 style={{marginTop: "20px"}}> Join Our Company</h1>
-                <h4>You will have the opportunity to receive many great deals</h4>
-                </Col>
+             
                
               </Row>
             </Container>

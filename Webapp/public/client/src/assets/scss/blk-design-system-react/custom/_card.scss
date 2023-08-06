@@ -46,7 +46,8 @@
 
       .card-title{
           color: $white;
-          font-weight: 100;
+          font-weight: 500;
+          font-size: 20px;
       }
 
       .card-category {
@@ -55,15 +56,17 @@
         font-weight: 300;
       }
     }
-
+  
     .map {
         border-radius: $border-radius-sm;
-
         &.map-big{
           height: 420px;
         }
     }
-
+    &.card-payment {
+      background-color: black !important;
+     
+    }
     &.card-plain {
       background: transparent;
       box-shadow: none;
@@ -93,6 +96,7 @@
         background-color: transparent;
         border: 0;
         padding: 15px;
+        color: aqua;
 
 
         .stats{
