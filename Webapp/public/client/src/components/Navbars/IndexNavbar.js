@@ -124,15 +124,15 @@ export default function IndexNavbar() {
                   
                   Shirt
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/register-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                   
                   T-shirt
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/login-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                   
                    Coat
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/profile-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                  
                   Accessory
                 </DropdownItem>
@@ -151,19 +151,19 @@ export default function IndexNavbar() {
                 WOMAN
               </DropdownToggle>
               <DropdownMenu className="dropdown-with-icons">
-              <DropdownItem tag={Link} to="/">
+              <DropdownItem tag={Link} to="/manshirt-page">
                   
                   Shirt
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/register-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                   
                   T-shirt
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/login-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                   
                    Coat
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/profile-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                  
                   Accessory
                 </DropdownItem>
@@ -182,19 +182,19 @@ export default function IndexNavbar() {
               KID
               </DropdownToggle>
               <DropdownMenu className="dropdown-with-icons">
-              <DropdownItem tag={Link} to="/">
+              <DropdownItem tag={Link} to="/manshirt-page">
                   
                   Shirt
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/register-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                   
                   T-shirt
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/login-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                   
                    Coat
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/profile-page">
+                <DropdownItem tag={Link} to="/manshirt-page">
                  
                   Accessory
                 </DropdownItem>
