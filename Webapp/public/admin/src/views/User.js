@@ -90,7 +90,7 @@ function User() {
                       <FormGroup>
                         <label>Công ty (không được sửa)</label>
                         <Input
-                          defaultValue="Chinta Inc."
+                          defaultValue="Mango Inc."
                           disabled
                           placeholder="Company"
                           type="text"
@@ -173,7 +173,7 @@ function User() {
                     </Col>
                     <Col className="pl-1" md="4">
                       <FormGroup>
-                        <PhoneInput 
+                        <PhoneInput className="phone-input"
                           placeholder="Nhập số điện thoại"
                           country={'VN'}
                           value={phonenumber}

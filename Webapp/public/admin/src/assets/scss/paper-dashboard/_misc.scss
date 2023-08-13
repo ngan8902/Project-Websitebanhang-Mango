@@ -145,6 +145,12 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
   form {
     .form-group {
       margin-bottom: 20px;
+      .phone-input{
+        padding-top: 3px;
+        font-size: 14px;
+        color:gray;
+        font-family: $sans-serif-family ;
+      }
     }
   }
 }

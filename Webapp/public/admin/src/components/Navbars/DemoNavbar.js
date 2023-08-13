@@ -27,7 +27,7 @@ function Header(props) {
     }
     setIsOpen(!isOpen);
   };
- 
+
   const getBrand = () => {
     let brandName = "Default Brand";
     routes.map((prop, key) => {
@@ -73,9 +73,9 @@ function Header(props) {
         location.pathname.indexOf("full-screen-maps") !== -1
           ? "navbar-absolute fixed-top"
           : "navbar-absolute fixed-top " +
-            (color === "transparent" ? "navbar-transparent " : "")
+          (color === "transparent" ? "navbar-transparent " : "")
       }>
-   
+
       <Container fluid>
         <div className="navbar-wrapper">
           <div className="navbar-toggle">
@@ -98,17 +98,6 @@ function Header(props) {
           <span className="navbar-toggler-bar navbar-kebab" />
         </NavbarToggler>
         <Collapse isOpen={isOpen} navbar className="justify-content-end">
-          <form>
-            <InputGroup className="no-border">
-              <Input placeholder="Tìm kiếm..." />
-              <InputGroupAddon addonType="append">
-                <InputGroupText>
-                  <i className="nc-icon nc-zoom-split" />
-                </InputGroupText>
-              </InputGroupAddon>
-            </InputGroup>
-          </form>
-          
         </Collapse>
       </Container>
     </Navbar>

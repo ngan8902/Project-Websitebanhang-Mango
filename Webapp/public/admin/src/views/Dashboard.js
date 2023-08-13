@@ -1,7 +1,12 @@
 import * as React from "react";
 import { Line, Pie } from "react-chartjs-2";
-import {FaTshirt, FaMoneyCheck, FaRegListAlt, FaMoneyCheckAlt } from "react-icons/fa";
+import { FaTshirt, FaMoneyCheck, FaRegListAlt, FaMoneyCheckAlt } from "react-icons/fa";
 import { Bar } from 'react-chartjs-2';
+import moment from 'moment';
+import 'moment-timezone';
+import dayjs from "dayjs";
+
+
 // reactstrap components
 import {
   Card,
@@ -11,6 +16,7 @@ import {
   CardTitle,
   Row,
   Col,
+
 } from "reactstrap";
 // core components
 import {
@@ -18,9 +24,14 @@ import {
   dashboardEmailStatisticsChart,
   dashboardBarChart,
 } from "variables/charts.js";
-import Day from "es-abstract/5/Day";
 
 function Dashboard() {
+  // const [currentDateTime, setcurrentDateTime] = React.useState(null);
+  const HCM = moment().tz("Asia/Ho_Chi_Minh");
+  const currentDate = HCM.format("MMM Do YYYY");
+  const time = dayjs().format('HH:mm');
+
+
   return (
     <>
       <div className="content">
@@ -73,7 +84,7 @@ function Dashboard() {
                 <hr />
                 <div className="stats">
                   <i className="far fa-calendar" /> Ngày {' '}
-                  <input type="text" className="date" value="17/7/2023" style={{fontSize: '0.75rem', color: '#9A9A9A', border:'white'}}></input>
+                  {currentDate}
                 </div>
               </CardFooter>
             </Card>
@@ -84,7 +95,7 @@ function Dashboard() {
                 <Row>
                   <Col md="4" xs="5">
                     <div className="icon-big text-center icon-warning">
-                    <FaRegListAlt className="bill"></FaRegListAlt>
+                      <FaRegListAlt className="bill"></FaRegListAlt>
                     </div>
                   </Col>
                   <Col md="8" xs="7">
@@ -99,8 +110,8 @@ function Dashboard() {
               <CardFooter>
                 <hr />
                 <div className="stats">
-                  <i className="far fa-clock" />
-                  <input type="text" className="time" value="18:00" style={{fontSize: '0.75rem', color: '#9A9A9A', border:'white'}}></input> 
+                  {/* <input type="time" id="time" name="time" className="time" style={{ fontSize: '0.75rem', color: '#9A9A9A', border: 'white' }}></input> */}
+                {time}
                 </div>
               </CardFooter>
             </Card>
@@ -111,13 +122,13 @@ function Dashboard() {
                 <Row>
                   <Col md="4" xs="5">
                     <div className="icon-big text-center icon-warning">
-                      <FaMoneyCheck className="bill-cancel"></FaMoneyCheck>               
+                      <FaMoneyCheck className="bill-cancel"></FaMoneyCheck>
                     </div>
                   </Col>
                   <Col md="8" xs="7">
                     <div className="numbers">
                       <p className="card-category">Số đơn hủy</p>
-                        <CardTitle tag="p">50</CardTitle>
+                      <CardTitle tag="p">50</CardTitle>
                       <p />
                     </div>
                   </Col>
@@ -160,7 +171,7 @@ function Dashboard() {
           <Col md="4">
             <Card>
               <CardHeader>
-                <CardTitle tag="h5">Thống kê Email</CardTitle>
+                <CardTitle tag="h5">Thống kê Email</CardTitle>  
                 <p className="card-category">Hiệu suất</p>
               </CardHeader>
               <CardBody style={{ height: "266px" }}>
@@ -178,7 +189,7 @@ function Dashboard() {
                 </div>
                 <hr />
                 <div className="stats">
-                  <i className="fa fa-calendar" /> Số email đã được gửi 
+                  <i className="fa fa-calendar" /> Số email đã được gửi
                 </div>
               </CardFooter>
             </Card>
@@ -190,26 +201,26 @@ function Dashboard() {
                 <p className="card-category"></p>
               </CardHeader>
               <CardBody>
-              <div className="chart-container">
-              <h2 style={{ textAlign: "center" }}>Sản phẩm bán chạy</h2>
-              <Bar
-                data={dashboardBarChart.data}
-                options={{
-                  plugins: {
-                    title: {
-                      display: true,
-                      text: "Số sản phẩm bán được trong vòng 12 tháng"
-                    },
-                    legend: {
-                      display: false
-                    }
-                  }
-                }}
-              />
-            </div>
+                <div className="chart-container">
+                  <h2 style={{ textAlign: "center" }}>Sản phẩm bán chạy</h2>
+                  <Bar
+                    data={dashboardBarChart.data}
+                    options={{
+                      plugins: {
+                        title: {
+                          display: true,
+                          text: "Số sản phẩm bán được trong vòng 12 tháng"
+                        },
+                        legend: {
+                          display: false
+                        }
+                      }
+                    }}
+                  />
+                </div>
               </CardBody>
               <CardFooter>
-                
+
               </CardFooter>
             </Card>
           </Col>

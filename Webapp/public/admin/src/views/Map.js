@@ -1,23 +1,4 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
-// reactstrap components
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
 const MapWrapper = () => {
@@ -25,8 +6,8 @@ const MapWrapper = () => {
   React.useEffect(() => {
     let google = window.google;
     let map = mapRef.current;
-    let lat = "40.748817";
-    let lng = "-73.985428";
+    let lat = "10.836300";
+    let lng = "106.624310";
     const myLatlng = new google.maps.LatLng(lat, lng);
     const mapOptions = {
       zoom: 13,

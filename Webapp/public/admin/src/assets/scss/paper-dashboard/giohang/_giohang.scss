@@ -5,7 +5,8 @@
 
 
     .modal-body{
-        height: 200px;
+        height: 180px;
+        display: flex;
         .setop{
             display: grid;
             margin-left: 15px;
@@ -18,12 +19,53 @@
             display: flex;
             margin-top: 20px;
         }
+        #sp,#gia{
+            margin-top: 40px;
+        }
     }
 
     .modal-footer{
         height: 70px;
-        .btn-themsp,.btn-xoasp,.btn-suasp{
-            margin-top: 5px;
+        .btn-them{
+            border: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 35px;
+            background-color: $new-brown;
+            font-size: 0.75rem;
+            color: white;
+            &:hover{
+                background-color: $new-brown-gray;
+                color: black;
+            }
         }
+        .btn-sua{
+            border: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 35px;
+            background-color: $new-brown;
+            font-size: 0.75rem;
+            color: white;
+            &:hover{
+                background-color:$new-brown-gray;
+                color: black;
+            }
+        }
+        .btn-huy{
+            border: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 35px;
+            background-color: $new-dark-blue;
+            font-size: 0.75rem;
+            color: white;
+            &:hover{
+                background-color:$new-blue;
+                color: black;
+            }
+        }
+        
+        
     }
 }

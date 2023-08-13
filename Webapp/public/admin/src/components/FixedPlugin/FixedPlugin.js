@@ -1,5 +1,7 @@
 import React from "react";
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { FaFacebookMessenger} from "react-icons/fa";
+import Message from "message/message";
 
 import { Button } from "reactstrap";
 
@@ -21,54 +23,64 @@ function FixedPlugin(props) {
       setClasses("dropdown");
     }
   };
+
+  
   return (
     <div>
       {
         (login) ? <Login></Login>
-        :<div className="fixed-plugin">
-        <div className={classes}>
-          <div onClick={handleClick}>
-            <i className="fa fa-cog fa-2x" />
-          </div>
-          <ul className="dropdown-menu show">
-            <li className="header-title">SETTING</li>           
-            <li className="button-container">
-              <Button
-                href=""
-                color="primary"
-                block
-                className="btn-round"
-              >
-                Thông tin
-              </Button>
-            </li>
-            <li className="button-container">
-              <Button
-                href="https://github.com/ngan8902/Project-Websitebanhang-.git"
-                color="default"
-                block
-                className="btn-round"
-                outline
-              >
-                <i className="nc-icon nc-paper" /> Documentation
-              </Button>
-            </li>
-            <li className="button-container">
-              <Button
-                color="danger"
-                block
-                className="btn-round"
-                onClick={handleClicksignout}
-              >
-                Đăng Suất
-              </Button>
-            </li>
-          </ul>
-        </div>
-      </div>
+          : <div className="fixed">
+            <div className="fixed-plugin">
+              <div className={classes}>
+                <div onClick={handleClick}>
+                  <i className="fa fa-cog fa-2x" />
+                </div>
+                <ul className="dropdown-menu show">
+                  <li className="header-title">SETTING</li>
+                  <li className="button-container">
+                    <Button
+                      href=""
+                      color="primary"
+                      block
+                      className="btn-round"
+                    >
+                      Thông tin
+                    </Button>
+                  </li>
+                  <li className="button-container">
+                    <Button
+                      href="https://github.com/ngan8902/Project-Websitebanhang-.git"
+                      color="default"
+                      block
+                      className="btn-round"
+                      outline
+                    >
+                      <i className="nc-icon nc-paper" /> Documentation
+                    </Button>
+                  </li>
+                  <li className="button-container">
+                    <Button
+                      color="danger"
+                      block
+                      className="btn-round"
+                      onClick={handleClicksignout}
+                    >
+                      Đăng Suất
+                    </Button>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="icon-mess">
+                <FaFacebookMessenger ></FaFacebookMessenger>
+                <span className="badges" style={{ color: "red" }}></span>
+              </div>
+              </div>
+            </div>
+
       }
     </div>
-    
+
   );
 }
 

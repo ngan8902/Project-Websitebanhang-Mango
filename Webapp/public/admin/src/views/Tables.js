@@ -1,5 +1,4 @@
 import * as React from "react";
-import { FaShoppingCart } from "react-icons/fa";
 
 import {
   Card,
@@ -11,46 +10,84 @@ import {
   Col,
   Button,
   Modal,
-  ModalHeader, ModalBody, ModalFooter
+  ModalHeader, ModalBody, ModalFooter, Dropdown
 } from "reactstrap";
 
 function Tables() {
   const [open, setOpen] = React.useState(false);
-  const [edit, setEdit] = React.useState("show");
+  const [edit, setEdit] = React.useState(false);
+  const [deleted, setDeleted] = React.useState(false);
+  const [checkbox, setCheckbox] = React.useState(false);
+
 
   let handleClickOpen = () => {
     setOpen(true);
-    console.log(1)
   }
 
   let handleClickClose = () => {
     setOpen(false);
   }
 
-  // let handleClickEdit = () => {
-  //   if (edit === "show") {
-  //     setEdit("show show");
-  //   } else {
-  //     setEdit("show");
-  //   }
-  // }
+  let handleClickEdit = () => {
+    if (checkbox) {
+      setEdit(true);
+      console.log(true)
+    } else {
+      setEdit(false);
+      console.log(false)
+    }
+  }
+
+  let handleClickCloseedit = () => {
+    setEdit(false);
+    setCheckbox(false);
+    console.log("close")
+  }
+
+  let handleClickDeleted = () => {
+    if (checkbox) {
+      setDeleted(true);
+    } else {
+      setEdit(false);
+    }
+  }
+
+  let handleClickClosedeleted = () => {
+    setDeleted(false);
+    setCheckbox(false);
+  }
+
 
   return (
     <>
       <div className="content">
+        <div className="dropdown-sp">
+          <div className="listdanhmuc">
+            <Dropdown><a href="#">Danh mục sản phẩm</a></Dropdown>
+          </div>
+        </div>
         <Row>
           <Col md="12">
             <Card>
-              <CardHeader>
+              <CardHeader className="table-header">
                 <CardTitle tag="h4">Các sản phẩm</CardTitle>
-                <button className="btn-giohang" onClick={handleClickOpen}>
-                  <FaShoppingCart></FaShoppingCart>
-                </button>
+                <div className="col-4">
+                  <button className="btn-themsp" onClick={handleClickOpen} >
+                    Thêm
+                  </button>{' '}
+                  <button className="btn-xoasp" onClick={handleClickDeleted}>
+                    Xóa
+                  </button>{' '}
+                  <button className="btn-suasp" onClick={handleClickEdit}>
+                    Sửa
+                  </button>
+                </div>
               </CardHeader>
               <CardBody>
                 <Table responsive>
                   <thead className="text-list">
                     <tr>
+                      <th>{''}</th>
                       <th>Sản phẩm</th>
                       <th>Màu</th>
                       <th>Loại</th>
@@ -58,43 +95,50 @@ function Tables() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr className="tr">
+                      <td><input type="checkbox" checked={checkbox} value={checkbox} onChange={(e) => { setCheckbox(e.target.value) }} ></input></td>
                       <td>Áo sơ mi</td>
                       <td>Xanh, Đỏ, Trắng, Đen</td>
                       <td>Áo</td>
                       <td className="text-right">$36,738</td>
                     </tr>
-                    <tr>
+                    <tr className="tr">
+                      <td><input type="checkbox"></input></td>
                       <td>Đầm body</td>
                       <td>Đen, Trắng</td>
                       <td>Đầm</td>
                       <td className="text-right">$23,789</td>
                     </tr>
-                    <tr>
+                    <tr className="tr">
+                      <td><input type="checkbox"></input></td>
                       <td>Váy xếp ly</td>
                       <td>Trắng, Đen, Xanh, Be</td>
                       <td>Chân váy</td>
                       <td className="text-right">$56,142</td>
                     </tr>
-                    <tr>
+                    <tr className="tr">
+                      <td><input type="checkbox"></input></td>
                       <td>Áo crop-top</td>
                       <td>Ghi, Xám, Hồng</td>
                       <td>Áo</td>
                       <td className="text-right">$38,735</td>
                     </tr>
-                    <tr>
+                    <tr className="tr">
+                      <td><input type="checkbox"></input></td>
                       <td>Set đồ thể thao</td>
                       <td>Đen, Xám</td>
                       <td>Set</td>
                       <td className="text-right">$63,542</td>
                     </tr>
-                    <tr>
+                    <tr className="tr">
+                      <td><input type="checkbox"></input></td>
                       <td>Quần Jean</td>
                       <td>Đen, Xanh Đen</td>
                       <td>Quần</td>
                       <td className="text-right">$50,000</td>
                     </tr>
-                    <tr>
+                    <tr className="tr">
+                      <td><input type="checkbox"></input></td>
                       <td>Quần ống loe</td>
                       <td>Xanh nhạt, Xanh đậm</td>
                       <td>Quần</td>
@@ -108,8 +152,10 @@ function Tables() {
         </Row>
         <div className="giohang">
           <Modal isOpen={open} toggle={handleClickClose} >
-            <ModalHeader toggle={handleClickClose}>Chỉnh Sửa Danh Sách Sản Phẩm</ModalHeader>
-            <ModalBody className="row col-8">
+
+            <ModalHeader toggle={handleClickClose}>Thêm Sản Phẩm</ModalHeader>
+
+            <ModalBody className="row col-8" style={{ height: "230px" }}>
               <label className="setop">
                 Loại:
                 <select name="selectedLoai">
@@ -136,18 +182,57 @@ function Tables() {
                 Giá:<br></br>
                 <input type="text" placeholder="$" className="inp-gia"></input>
               </div>
-
             </ModalBody>
+
             <ModalFooter className="modal-footer">
-              <Button style={{ backgroundColor: '#1F77D0' }} className="btn-themsp" >
-                Thêm
-              </Button>{' '}
-              <Button style={{ backgroundColor: '#FB404B' }} className="btn-xoasp" >
-                Xóa
-              </Button>{' '}
-              <Button style={{ backgroundColor: '#d88715' }} className="btn-suasp">
-                Sửa
-              </Button>
+              <button className="btn-huy" onClick={handleClickClose}>Hủy</button>
+              <button className="btn-them" onClick={handleClickClose}>Thêm</button>
+            </ModalFooter>
+          </Modal>
+
+          <Modal isOpen={edit} toggle={handleClickCloseedit} >
+
+            <ModalHeader toggle={handleClickCloseedit}>Chỉnh Sửa Sản Phẩm</ModalHeader>
+
+            <ModalBody className="row1 col-8">
+
+              <div className="inp-1">
+                <div className="col">
+                  Loại:<br></br>
+                  <input type="text" placeholder="Loại" className="inp-tensp"></input>
+                </div>
+                <div id="sp" className="col">
+                  Sản Phẩm:<br></br>
+                  <input type="text" placeholder="Tên sản phẩm" className="inp-tensp"></input>
+                </div>
+              </div>
+
+              <div className="inp-2">
+                <div className="col">
+                  Màu:<br></br>
+                  <input type="text" placeholder="Màu" className="inp-mau"></input>
+                </div>
+                <div id="gia" className="col">
+                  Giá:<br></br>
+                  <input type="text" placeholder="$" className="inp-gia"></input>
+                </div>
+              </div>
+            </ModalBody>
+
+            <ModalFooter className="modal-footer">
+              <button className="btn-huy" onClick={handleClickCloseedit}>Hủy</button>
+              <button className="btn-sua" onClick={handleClickCloseedit}>Sửa</button>
+            </ModalFooter>
+          </Modal>
+
+          <Modal isOpen={deleted} toggle={handleClickClosedeleted}>
+
+            <ModalHeader toggle={handleClickClosedeleted}>Xác nhận xóa sản phẩm!!!</ModalHeader>
+
+
+            <ModalFooter className="modal-footer">
+              <button className="btn-huy" onClick={handleClickClosedeleted}>Hủy</button>
+              <button className="btn-sua" onClick={handleClickClosedeleted}>Xóa</button>
             </ModalFooter>
           </Modal>
         </div>

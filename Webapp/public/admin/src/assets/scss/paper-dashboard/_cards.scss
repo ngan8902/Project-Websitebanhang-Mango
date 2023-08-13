@@ -13,6 +13,29 @@
   -ms-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
   transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
 
+  .table-header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+    .card-header{
+        .btn-themsp,.btn-xoasp,.btn-suasp{
+            margin-top: 5px;
+            border-radius:20%;
+            border: white;
+            height: 40px;
+            font-size: 1rem;
+            background-color: $new-brown;
+            color: white;
+            &:hover{
+                background-color: $new-brown-gray;
+                color: black;
+            }
+            }
+        .col-4{
+            padding-left: 180px;
+        }
+    }
     .card-body{
         padding: 15px 15px 10px 15px;
 
@@ -43,9 +66,6 @@
             background-color: $danger-navbar;
         }
       }
-
-      display: flex;
-      justify-content: space-between;
     }
 
     .map{
@@ -66,6 +86,10 @@
         .card-footer{
             .stats{
                 color: $white-color;
+                .date{
+                    margin-left: 5px;
+                    margin-top: 3px;
+                }
             }
         }
     }

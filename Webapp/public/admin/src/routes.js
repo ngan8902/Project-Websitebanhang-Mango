@@ -28,20 +28,6 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/notifications",
-    name: "Thông báo",
-    icon: "nc-icon nc-bell-55",
-    component: <Notifications />,
-    layout: "/admin",
-  },
-  {
-    path: "/maps",
-    name: "Bản đồ",
-    icon: "nc-icon nc-pin-3",
-    component: <Maps />,
-    layout: "/admin",
-  },
-  {
     path: "*",
     component: <Navigate to="/admin/dashboard" replace={true} />,
     layout: "/admin",
