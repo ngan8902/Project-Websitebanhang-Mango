@@ -24,9 +24,11 @@ import "assets/scss/blk-design-system-react.scss";
 import "assets/demo/demo.css";
 
 import Index from "views/Index.js";
-import LandingPage from "views/examples/LandingPage.js";
+import LoginPage from "views/examples/LoginPage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
+import Manshirt from "views/examples/Manshirt.js";
+import Detailproduct from "views/examples/Productdetail.js";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
@@ -36,9 +38,11 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/components" element={<Index />} />
-      <Route path="/landing-page" element={<LandingPage />} />
+      <Route path="/login-page" element={<LoginPage />} />
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/profile-page" element={<ProfilePage />} />
+      <Route path ="/manshirt-page" element={<Manshirt/>} />
+      <Route path ="/detailproduct-page" element={<Detailproduct/>} />
       <Route path="*" element={<Navigate to="/components" replace />} />
     </Routes>
   </BrowserRouter>

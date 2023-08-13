@@ -1,0 +1,38 @@
+.bodycard{
+    margin: 10px;
+}
+.cardimg {
+     /* The image used */
+
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */ 
+  position: relative;
+
+}
+
+.cardimg.img1{
+    background-image: url($asset-base-path +"/img/body1.jpg");
+}
+.cardimg.img2{
+    background-image: url($asset-base-path +"/img/body2.jpg");
+}
+.cardimg.img3{
+    background-image: url($asset-base-path +"/img/body3.jpg");
+}
+.cardimg .cardtext{
+display: block;
+text-align: center;
+   
+  bottom: 10%;
+    font-size: 150%;
+    font-family: "Poppins", Sans-serif;
+    color: #000000;
+  position: absolute;
+ 
+// left: 0px;
+// right: 0px;
+ width: 350px;
+margin: 0px auto;
+}

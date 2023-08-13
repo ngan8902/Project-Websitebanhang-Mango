@@ -283,7 +283,7 @@
 }
 
 // style for the profile page
-.profile-page{
+.payment-page {
 
   overflow-x: hidden;
 
@@ -310,11 +310,11 @@
       }
     }
 
-    .profile-title {
-      position: absolute;
-      top: 110px;
-      left: 60px;
-    }
+    // .profile-title {
+    //   position: relative;
+    //   top: 110px;
+    //   left: 60px;
+    // }
 
     .profile-description {
       margin-top: -30px;
@@ -325,6 +325,7 @@
 
     .profile-container {
         color: $white;
+        font-size: medium;
     }
     .photo-container {
       max-width: 400px;

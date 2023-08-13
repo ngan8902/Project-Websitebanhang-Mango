@@ -1,0 +1,76 @@
+.content h2{
+    font-size: 26px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #25292c;
+    letter-spacing: 1px;
+   
+}
+.content p{
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: 3px;
+    padding-top: 14px;
+    color: #878787;
+}
+.content-text {
+    text-align: center;
+
+}
+.nav-tabs {
+    border: 0;
+    padding: 0.5rem 0.7rem;
+    justify-content: center;
+ 
+}
+.content .nav-tabs > .nav-item > .nav-link {
+    /* FONT-WEIGHT: 300; */
+    color: #ff1313;
+    margin: 0;
+    font-weight: 700;
+    margin-right: 5px;
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 11px 23px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.content .nav-tabs > .nav-item > .nav-link :hover {
+    /* FONT-WEIGHT: 300; */
+    color: rgba(245, 67, 67, 0.91);
+    margin: 0;
+    font-weight: 700;
+    background-color: #878787;
+    border: 1px solid #f7f8fb;
+   
+    padding: 11px 23px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+
+
+.content .nav-tabs > .nav-item > .nav-link:hover {
+    
+  
+    color: rgba(83, 83, 83, 0.91);
+}
+.card-body{
+    background-color: white;
+}
+.card-product .card-content{
+    text-align: center;
+}
+.card .card-body  .card-title {
+    color: #000000 !important;
+    text-transform: inherit;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    letter-spacing: .25px;}
+    .card .card-body .card-title .card-subtitle{
+        color: #948e8e !important;
+        text-transform: inherit;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+        letter-spacing: .25px;}

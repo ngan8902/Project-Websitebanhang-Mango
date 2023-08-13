@@ -8,6 +8,7 @@
 /Webapp/public/client/package-lock.json
 /Webapp/node_modules
 /Webapppackage-lock.json
+node_modules
 
 # testing
 /coverage

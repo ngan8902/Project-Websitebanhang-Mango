@@ -21,7 +21,8 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
-
+import Bodytab from "components/body/Bodytab.js";
+import BodyCard from "components/body/BodyCard.js";
 // sections for this page/view
 import Basics from "views/IndexSections/Basics.js";
 import Navbars from "views/IndexSections/Navbars.js";
@@ -35,7 +36,13 @@ import Signup from "views/IndexSections/Signup.js";
 import Examples from "views/IndexSections/Examples.js";
 import Download from "views/IndexSections/Download.js";
 
+
 export default function Index() {
+  var reactListDiv = document.querySelector('.list');
+
+if (reactListDiv) {
+    reactListDiv.remove();
+}
   React.useEffect(() => {
     document.body.classList.toggle("index-page");
     // Specify how to clean up after this effect:
@@ -49,17 +56,22 @@ export default function Index() {
       <div className="wrapper">
         <PageHeader />
         <div className="main">
-          <Basics />
+         
+          {/* <Basics />
           <Navbars />
-          <Tabs />
-          <Pagination />
+  <Tabs />*/}
+          
+          <BodyCard />
+          <Bodytab/>
+           {/* <Pagination />  
           <Notifications />
           <Typography />
           <JavaScript />
           <NucleoIcons />
           <Signup />
           <Examples />
-          <Download />
+          <Download />  */}
+
         </div>
         <Footer />
       </div>
