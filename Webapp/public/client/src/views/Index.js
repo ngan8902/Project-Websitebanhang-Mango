@@ -38,6 +38,11 @@ import Download from "views/IndexSections/Download.js";
 
 
 export default function Index() {
+  var reactListDiv = document.querySelector('.list');
+
+if (reactListDiv) {
+    reactListDiv.remove();
+}
   React.useEffect(() => {
     document.body.classList.toggle("index-page");
     // Specify how to clean up after this effect:

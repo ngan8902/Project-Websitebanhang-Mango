@@ -22,6 +22,7 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
+import Message from './Message.js';
 // reactstrap components
 import {
   Button,
@@ -90,23 +91,25 @@ export default function LandingPage() {
   };
   return (
     <>
-<IndexNavbar />
+      <IndexNavbar />
+      <Message />
       <div className="wrapper">
-        <div className="page-header" style={{backgroundImage:
-               'url("https://ongnhuahdpevietnam.com/wp-content/uploads/2022/08/hinh-nen-trang-2k-1536x864.jpg")',
-               backgroundSize: "contain"
-              }}>
-      
+        <div className="page-header" style={{
+          backgroundImage:
+            'url("https://ongnhuahdpevietnam.com/wp-content/uploads/2022/08/hinh-nen-trang-2k-1536x864.jpg")',
+          backgroundSize: "contain"
+        }}>
+
           <div className="page-header-image" />
           <div className="content"  >
             <Container >
               <Row>
-              <Col>
-               
-               <img src={require('../../assets/img/login2.jpg')} alt="" />
-               <h1 style={{marginTop: "20px"}}> Join Our Company</h1>
-               <h4>You will have the opportunity to receive many great deals</h4>
-               </Col>
+                <Col>
+
+                  <img src={require('../../assets/img/login2.jpg')} alt="" />
+                  <h1 style={{ marginTop: "20px" }}> Join Our Company</h1>
+                  <h4>You will have the opportunity to receive many great deals</h4>
+                </Col>
                 <Col className="offset-lg-0 offset-md-3" lg="5" md="6">
                   <Card className="card-register">
                     <CardHeader>
@@ -114,7 +117,7 @@ export default function LandingPage() {
                         alt="..."
                         src={require("assets/img/square-purple-1.png")}
                       />
-                      <CardTitle tag="h4" style={{marginLeft:"2px",textAlign:"center",color:"white"}}>
+                      <CardTitle tag="h4" style={{ marginLeft: "2px", textAlign: "center", color: "white" }}>
                         Login</CardTitle>
                     </CardHeader>
                     <CardBody>
@@ -184,7 +187,7 @@ export default function LandingPage() {
                           </Label>
                         </FormGroup>
                       </Form>
-                    
+
                     </CardBody>
                     <CardFooter>
 
@@ -192,15 +195,15 @@ export default function LandingPage() {
                         Get Started
                       </Button>
                       <NavLink tag={Link} to="/register-page">
-                Don't have an account ?  Sign up
-              </NavLink>
+                        Don't have an account ?  Sign up
+                      </NavLink>
                     </CardFooter>
                   </Card>
 
-                  
+
                 </Col>
-             
-               
+
+
               </Row>
             </Container>
           </div>

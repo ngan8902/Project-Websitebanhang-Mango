@@ -1,0 +1,98 @@
+
+i.icon-message.fa-solid.fa-message {
+    color: black;
+    position: fixed;
+    z-index: 1;
+    bottom: 10px;
+    right: 10px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 26px;
+    border: 3px solid #ff6e89;
+}
+i.icon-message.fa-solid.fa-message:hover {
+    color: red;
+}
+.modal-dialog.customModal {
+    position: fixed;
+    bottom: 45px;
+    right: 45px;
+    .modal-content{
+        bottom: 78px;
+        right: 10px;
+        max-width: 346px;
+       
+        
+    }
+}
+.fa-paperclip:before {
+    content: "\f0c6";
+    padding: 5px;
+}
+.fa-face-smile:before, .fa-smile:before {
+    content: "\f118";
+    padding: 5px;}
+input#exampleFormControlInput1 {
+    color: black;
+    border-radius: 20px;
+    padding: 6px;
+    height: 36px;
+    margin-left: 5px;
+    margin-right: 5px; }
+.fa-user:before {
+    content: "\f007";
+    position: absolute;
+    left: 0 px;
+    left: 11px;
+    top: 0px;
+    font-size: 31px; }
+    .icon-chat {
+        position: absolute;
+        left: 108px;
+        top: 7px;
+    }
+    .buttonclose-chat{
+        position: absolute;
+        
+            
+            border: none;
+    border-radius: 14px;
+    left: 26px;
+    top: -16px;
+        
+    }
+    button.buttonclose-chat:hover {
+        background-color: pink;
+    }
+    .contentchat-text-my{
+        padding-left: 5px;
+    }
+    .contentchat-my.row {
+        text-align: end;
+        padding-left: 131px;
+    }
+    button.buttonsend-chat {
+        border-radius: 20px;
+        border: none;
+        background-color: #4d9ad1;
+        margin-top: -1px;
+        color: white;
+        padding: 5px;
+        width: 66px;
+    }
+    button.buttonsend-chat:hover{
+        color: black;
+    }
+    .content-chat{
+        padding-bottom: 20px;
+    }
+    .content-text-chat{
+        padding-bottom: 5px;
+    }
+    

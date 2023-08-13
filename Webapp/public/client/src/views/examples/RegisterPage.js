@@ -19,6 +19,7 @@ import React from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
+import Message from './Message.js';
 // reactstrap components
 import {
   Button,
@@ -84,11 +85,13 @@ export default function RegisterPage() {
   return (
     <>
       <IndexNavbar />
+      <Message />
       <div className="wrapper">
-        <div className="page-header" style={{backgroundImage:
-               'url("https://ongnhuahdpevietnam.com/wp-content/uploads/2022/08/hinh-nen-trang-2k-1536x864.jpg")',
-               backgroundSize: "contain"
-              }}>
+        <div className="page-header" style={{
+          backgroundImage:
+            'url("https://ongnhuahdpevietnam.com/wp-content/uploads/2022/08/hinh-nen-trang-2k-1536x864.jpg")',
+          backgroundSize: "contain"
+        }}>
           <div className="page-header-image" />
           <div className="content"  >
             <Container >
@@ -100,7 +103,7 @@ export default function RegisterPage() {
                         alt="..."
                         src={require("assets/img/square-purple-1.png")}
                       />
-                      <CardTitle tag="h4" style={{marginLeft:"2px",textAlign:"center",color:"white"}}>Register</CardTitle>
+                      <CardTitle tag="h4" style={{ marginLeft: "2px", textAlign: "center", color: "white" }}>Register</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form className="form">
@@ -169,27 +172,27 @@ export default function RegisterPage() {
                           </Label>
                         </FormGroup>
                       </Form>
-                    
+
                     </CardBody>
                     <CardFooter>
                       <Button className="btn-round" color="primary" size="lg">
                         Get Started
                       </Button>
                       <NavLink tag={Link} to="/login-page">
-                Have an account ? Login
-              </NavLink>
+                        Have an account ? Login
+                      </NavLink>
                     </CardFooter>
                   </Card>
 
-                  
+
                 </Col>
                 <Col>
-               
-                <img src={require('../../assets/img/login1.jpg')} alt="" />
-                <h1 style={{marginTop: "20px"}}> Join Our Company</h1>
-                <h4>You will have the opportunity to receive many great deals</h4>
+
+                  <img src={require('../../assets/img/login1.jpg')} alt="" />
+                  <h1 style={{ marginTop: "20px" }}> Join Our Company</h1>
+                  <h4>You will have the opportunity to receive many great deals</h4>
                 </Col>
-               
+
               </Row>
             </Container>
           </div>

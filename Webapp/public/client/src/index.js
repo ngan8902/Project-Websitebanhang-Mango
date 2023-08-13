@@ -27,6 +27,8 @@ import Index from "views/Index.js";
 import LoginPage from "views/examples/LoginPage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
+import Manshirt from "views/examples/Manshirt.js";
+import Detailproduct from "views/examples/Productdetail.js";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
@@ -39,6 +41,8 @@ root.render(
       <Route path="/login-page" element={<LoginPage />} />
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/profile-page" element={<ProfilePage />} />
+      <Route path ="/manshirt-page" element={<Manshirt/>} />
+      <Route path ="/detailproduct-page" element={<Detailproduct/>} />
       <Route path="*" element={<Navigate to="/components" replace />} />
     </Routes>
   </BrowserRouter>

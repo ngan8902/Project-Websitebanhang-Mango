@@ -84,6 +84,7 @@ export default function IndexNavbar() {
       .getElementById("download-section")
       .scrollIntoView({ behavior: "smooth" });
   };
+  
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
@@ -105,6 +106,102 @@ export default function IndexNavbar() {
             <span className="navbar-toggler-bar bar3" />
           </button>
         </div>
+        {/* MENU CATEGORY */}
+        <Nav navbar>
+        <UncontrolledDropdown nav>
+              <DropdownToggle
+                caret
+                color="default"
+                data-toggle="dropdown"
+                href="#pablo"
+                nav
+                onClick={(e) => e.preventDefault()}
+              > 
+                MAN
+              </DropdownToggle>
+              <DropdownMenu className="dropdown-with-icons">
+              <DropdownItem tag={Link} to="/manshirt-page">
+                  
+                  Shirt
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/register-page">
+                  
+                  T-shirt
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/login-page">
+                  
+                   Coat
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/profile-page">
+                 
+                  Accessory
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <UncontrolledDropdown nav>
+              <DropdownToggle
+                caret
+                color="default"
+                data-toggle="dropdown"
+                href="#pablo"
+                nav
+                onClick={(e) => e.preventDefault()}
+              >
+                
+                WOMAN
+              </DropdownToggle>
+              <DropdownMenu className="dropdown-with-icons">
+              <DropdownItem tag={Link} to="/">
+                  
+                  Shirt
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/register-page">
+                  
+                  T-shirt
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/login-page">
+                  
+                   Coat
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/profile-page">
+                 
+                  Accessory
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+            <UncontrolledDropdown nav>
+              <DropdownToggle
+                caret
+                color="default"
+                data-toggle="dropdown"
+                href="#pablo"
+                nav
+                onClick={(e) => e.preventDefault()}
+              >
+                
+              KID
+              </DropdownToggle>
+              <DropdownMenu className="dropdown-with-icons">
+              <DropdownItem tag={Link} to="/">
+                  
+                  Shirt
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/register-page">
+                  
+                  T-shirt
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/login-page">
+                  
+                   Coat
+                </DropdownItem>
+                <DropdownItem tag={Link} to="/profile-page">
+                 
+                  Accessory
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+        </Nav>
+        
         <Collapse
           className={"justify-content-end " + collapseOut}
           navbar
@@ -118,6 +215,8 @@ export default function IndexNavbar() {
             </Row>
           </div>
           <Nav navbar>
+
+          
 
             <NavItem className="p-0">
               <NavLink
@@ -140,7 +239,8 @@ export default function IndexNavbar() {
                 modalTransition={{ timeout: 700 }}
                 backdropTransition={{ timeout: 1300 }}
                 toggle={toggle}
-style={{padding:"30px"}}
+                
+ style={{padding:"30px"}}
               >
                 <ModalHeader toggle={toggle} style={{ textAlign: "center", backgroundColor: "black", color: "white" }}>CARD SHOPPING</ModalHeader>
                 <ModalBody>

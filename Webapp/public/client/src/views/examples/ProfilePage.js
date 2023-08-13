@@ -18,6 +18,7 @@
 import React from "react";
 import classnames from "classnames";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
+ import Message from './Message.js';
 import { Link } from "react-router-dom";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
@@ -86,7 +87,7 @@ export default function ProfilePage() {
     // Specify how to clean up after this effect:
     return function cleanup() {
       if (navigator.platform.indexOf("Win") > -1) {
-        ps.destroy();
+        ps && ps.destroy();
         document.documentElement.className += " perfect-scrollbar-off";
         document.documentElement.classList.remove("perfect-scrollbar-on");
       }
@@ -96,6 +97,7 @@ export default function ProfilePage() {
   return (
     <>
       <IndexNavbar />
+      <Message/>
       <div className="wrapper">
                 <section className="section" style={{backgroundColor:"#ffcacaa1"}}>
                   <div className="profile-title text-center" style={{color:"black "}}>
