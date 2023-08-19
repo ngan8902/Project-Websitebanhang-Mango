@@ -1,8 +1,17 @@
+const { products } = require('../data')
 
-function getProduct() {
+class ProductController {
 
+    static getProducts = (req, res, next) => {
+        // logic code
+        res.json({
+            data: products
+        })
+    }
+
+    static createProduct = (req, res, next) => {
+
+    }
 }
 
-module.exports.getProduct = getProduct;
-
-
+module.exports = ProductController

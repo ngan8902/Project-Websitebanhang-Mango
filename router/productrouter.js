@@ -3,13 +3,9 @@ const router = express.Router()
 const ProductController = require("../controller/productcontroller")
 
 
-router.get("/", (req, res) => {
-    res.end('Home');
-})
+router.get("/", ProductController.getProducts)
 
-router.post("/", (req, res) => {
-    res.end('Home');
-})
+router.post("/", ProductController.createProduct)
 
 router.put("/", (req, res) => {
     res.end('Home');
