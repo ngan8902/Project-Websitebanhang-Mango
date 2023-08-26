@@ -35,6 +35,18 @@ function triggerTables() {
     });
 }
 
-module.exports.connection = connection;
-module.exports.triggerDatabase = triggerDatabase;
-module.exports.triggerTables = triggerTables;
+function triggerTablesAdmin() {
+    var sql = 'CREATE TABLE shop (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, shopname VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, role ENUM("admin", "staff") NOT NULL, token VARCHAR(255))';
+    con.query(sql, function (err, result){
+        if(err) throw err;
+        console.log("Table created!")
+    });
+}
+
+module.exports = {
+    con,
+    connection,
+    triggerDatabase,
+    triggerTables,
+    triggerTablesAdmin
+}

@@ -1,0 +1,17 @@
+### Get Products
+GET http://localhost:3000/api/product
+authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbmdvIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJpYXQiOjE2OTMwMjI1MDd9.TLjYlAKnb7tagxr6w0WoAHocOmUYj3k9j_9uJbvWgUo
+
+
+### Get Customer
+GET http://localhost:3000/api/customer
+
+### POST Product
+POST http://localhost:3000/api/product
+content-type: application/json
+
+{
+    "name": "Iphone 14",
+    "model": 1234
+}
+
