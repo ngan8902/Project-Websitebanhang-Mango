@@ -9,6 +9,7 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import AdminLayout from "layouts/Admin.js";
 import Login from "views/Login";
+import Signup from "views/Signup";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -31,6 +32,8 @@ if(authen) {
       <Routes>
         <Route path="/admin/login" element={<Login />} />
         <Route path="/admin/*" element={<Navigate to="/admin/login"  />} />
+        <Route path="/admin/login/signup" element={<Signup />} />
+        <Route path="/admin/*" element={<Navigate to="/admin/login/signup"  />} />
       </Routes>
     </BrowserRouter>
   );

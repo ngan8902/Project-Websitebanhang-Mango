@@ -1,7 +1,7 @@
 #loginpage{
     &.App{
         // background-color: rgb(255, 255, 255);
-        background-color: rgba(222, 177, 194, 0.304) !important;
+        background: linear-gradient(187deg, rgb(45, 184, 194) 0%, rgb(144, 81, 232) 48%, rgb(195, 75, 216) 99%);
         width: 100%;
         height: 100%;
         position: absolute;
@@ -14,9 +14,13 @@
         margin: 50px 350px 50px 350px;
         // position: absolute;
         .text-login{
-            text-align: center;
-            font-family:inherit;
+            font-family: 'Montserrat';
             font-size: 2.8rem;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            background: linear-gradient(0deg, rgb(12 62 234) 0%, rgb(190 48 202) 35%, rgb(112 201 239) 100%);
+            text-align: center;
+            background-clip: text;
         }
         .form-check-input{
             border: 1px solid black;
@@ -24,9 +28,7 @@
         .form-label{
             color: red;
         }
-        .btn{
-            background-color: $primary-color;
-        }
+
     }
    
 }
