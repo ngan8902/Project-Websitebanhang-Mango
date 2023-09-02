@@ -232,3 +232,37 @@
     display: none;
   }
 }
+
+.btn-mango {
+    padding: 8px 12px;
+    background: linear-gradient(187deg, rgba(226,77,41,1) 0%, rgba(184,55,26,1) 48%, rgba(123,60,45,1) 99%);
+
+}
+
+.btn-đn {
+    background: linear-gradient(94deg, rgb(106 234 220) 0%, rgb(26 155 184) 48%, #081ec5 99%);
+    border: none;
+    border-radius: 8px;
+    height: 1.75rem;
+    font-size: 1rem;
+    color: white;
+    &:hover{
+        background: linear-gradient(94deg, rgba(106, 234, 219, 0.566) 0%, rgba(26, 155, 184, 0.621) 48%, #081ec588 99%);
+
+    }
+
+}
+
+.btn-đk {
+    background: linear-gradient(94deg, rgb(106 234 220) 0%, rgb(26 155 184) 48%, #081ec5 99%);
+    border: none;
+    border-radius: 8px;
+    height: 1.75rem;
+    font-size: 1rem;
+    color: white;
+    &:hover{
+        background: linear-gradient(94deg, rgba(106, 234, 219, 0.566) 0%, rgba(26, 155, 184, 0.621) 48%, #081ec588 99%);
+
+    }
+
+}
