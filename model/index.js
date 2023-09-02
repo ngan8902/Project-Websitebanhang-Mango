@@ -25,13 +25,13 @@ function triggerTables() {
     var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
     con.query(sql, function (err, result){
         if(err) throw err;
-        console.log("Table created!")
+        console.log("Table customer created!")
     });
 
     var sql1 = "CREATE TABLE products (name VARCHAR(255), address VARCHAR(255))";
     con.query(sql1, function (err, result){
         if(err) throw err;
-        console.log("Table created!")
+        console.log("Table products created!")
     });
 }
 

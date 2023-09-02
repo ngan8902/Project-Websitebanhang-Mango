@@ -4,10 +4,11 @@ const JWT = require('jsonwebtoken')
 class ProductController {
 
     static getProducts = (req, res, next) => {
-        // logic code
         res.json({
+            message: 'Get product success!',
             data: products
         })
+        
     }
 
     static createProduct = (req, res, next) => {
