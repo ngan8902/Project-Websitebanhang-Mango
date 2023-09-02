@@ -19,7 +19,7 @@ class ShopController {
                     data: results
                 })
 
-            } catch(err) {
+            } catch (err) {
                 res.status(500).json({
                     code: 500,
                     message: 'Error:::',
@@ -33,9 +33,10 @@ class ShopController {
     static login = (req, res, next) => {
         try {
             const { username, password } = req.body
-            if(!username || !password) throw new Error('Errorr: invalid username or password!')
+            if (!username || !password) throw new Error('Errorr: invalid username or password!')
 
-            con.query('SELECT * FROM shop WHERE username = ? AND password = ?', [username, password], function (error, results, fields) {
+            con.query('SELECT * FROM shop WHERE username = ? AND password = ?', [username, password], 
+            function (error, results, fields) {
                 if (error) throw error;
                 const foundShop = results[0] ? results[0] : {}
                 const token = JWT.sign({ username: foundShop.username, password: foundShop.password }, SECRECT_KEY)
@@ -46,9 +47,9 @@ class ShopController {
                         token
                     }
                 })
-              });
+            });
 
-        } catch(err) {
+        } catch (err) {
             res.status(500).json({
                 code: 500,
                 message: 'Error:::',
