@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules
+
 /Document/TemplateAdmin/node_modules
 # dependencies
 /Webapp/public/admin/node_modules
@@ -8,7 +13,6 @@
 /Webapp/public/client/package-lock.json
 /Webapp/node_modules
 /Webapppackage-lock.json
-node_modules
 
 # testing
 /coverage
@@ -17,13 +21,8 @@ node_modules
 /Webapp/build
 
 # misc
-/Webapp/.DS_Store
-/Webapp/.env.local
-/Webapp/.env.development.local
-/Webapp/.env.test.local
-/Webapp/.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-node_modules
+/Webapp/public/.DS_Store
+/Webapp/public/.env.local
+/Webapp/public/.env.development.local
+/Webapp/public/.env.test.local
+/Webapp/public/.env.production.local
