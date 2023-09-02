@@ -3,7 +3,7 @@ const cors = require('cors');
 const routes = require("./router");
 const mysqlDb = require('./model')
 const app = express();
-const port = 3001;
+const port = 3000;
 const bodyParser = require('body-parser')
 
 // Middleware

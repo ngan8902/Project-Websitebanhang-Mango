@@ -1,21 +1,4 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+import React, { useState } from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import { Link } from "react-router-dom";
 import classnames from "classnames";
@@ -44,6 +27,7 @@ import {
   NavLink,
   Nav
 } from "reactstrap";
+import ClientAxios from '../../utils/fetch.utils.js'
 
 // core components
 
@@ -55,6 +39,12 @@ export default function RegisterPage() {
   const [fullNameFocus, setFullNameFocus] = React.useState(false);
   const [emailFocus, setEmailFocus] = React.useState(false);
   const [passwordFocus, setPasswordFocus] = React.useState(false);
+  const [customer, setCustomer] = useState({
+    email: '',
+    password: '',
+    fullname: ''
+  })
+
   React.useEffect(() => {
     document.body.classList.toggle("register-page");
     document.documentElement.addEventListener("mousemove", followCursor);
@@ -64,6 +54,16 @@ export default function RegisterPage() {
       document.documentElement.removeEventListener("mousemove", followCursor);
     };
   }, []);
+
+  const onHandleSignup = (event) => {
+    ClientAxios.post('/api/customer/signup', {
+      ...customer
+    }).then((response) => {
+      console.log(response)
+    })
+
+  }
+
   const followCursor = (event) => {
     let posX = event.clientX - window.innerWidth / 2;
     let posY = event.clientY - window.innerWidth / 6;
@@ -119,9 +119,14 @@ export default function RegisterPage() {
                           </InputGroupAddon>
                           <Input
                             placeholder="Full Name"
-                            type="text"
+                            type="text" style={{ color: "black" }}
+                            value={customer.fullname}
                             onFocus={(e) => setFullNameFocus(true)}
                             onBlur={(e) => setFullNameFocus(false)}
+                            onChange={e => setCustomer({
+                              ...customer,
+                              fullname: e.target.value
+                            })}
                           />
                         </InputGroup>
                         <InputGroup
@@ -136,9 +141,14 @@ export default function RegisterPage() {
                           </InputGroupAddon>
                           <Input
                             placeholder="Email"
-                            type="text"
+                            type='email' style={{ color: "black" }}
+                            value={customer.email}
                             onFocus={(e) => setEmailFocus(true)}
                             onBlur={(e) => setEmailFocus(false)}
+                            onChange={e => setCustomer({
+                              ...customer,
+                              email: e.target.value
+                            })}
                           />
                         </InputGroup>
                         <InputGroup
@@ -153,9 +163,14 @@ export default function RegisterPage() {
                           </InputGroupAddon>
                           <Input
                             placeholder="Password"
-                            type="text"
+                            type="password" style={{ color: "black" }}
+                            value={customer.password}
                             onFocus={(e) => setPasswordFocus(true)}
                             onBlur={(e) => setPasswordFocus(false)}
+                            onChange={e => setCustomer({
+                              ...customer,
+                              password: e.target.value
+                            })}
                           />
                         </InputGroup>
                         <FormGroup check className="text-left">
@@ -175,8 +190,10 @@ export default function RegisterPage() {
 
                     </CardBody>
                     <CardFooter>
-                      <Button className="btn-round" color="primary" size="lg">
-                        Get Started
+                      <Button className="btn-round" color="primary" size="lg"
+                        onClick={onHandleSignup}
+                      >
+                        Đăng Ký
                       </Button>
                       <NavLink tag={Link} to="/login-page">
                         Have an account ? Login
