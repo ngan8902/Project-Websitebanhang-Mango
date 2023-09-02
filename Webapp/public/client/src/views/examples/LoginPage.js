@@ -1,26 +1,8 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 // react plugin used to create charts
 import { Line } from "react-chartjs-2";
-import React from "react";
+import React, { useState } from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import classnames from "classnames";
 import Message from './Message.js';
 // reactstrap components
@@ -49,6 +31,7 @@ import {
   NavLink,
   Nav
 } from "reactstrap";
+import ClientAxios from '../../utils/fetch.utils.js'
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
@@ -62,6 +45,13 @@ export default function LandingPage() {
   const [fullNameFocus, setFullNameFocus] = React.useState(false);
   const [emailFocus, setEmailFocus] = React.useState(false);
   const [passwordFocus, setPasswordFocus] = React.useState(false);
+  const [customer, setCustomer] = useState({
+    email: '',
+    password: ''
+  })
+
+  const navigate = useNavigate();
+
   React.useEffect(() => {
     document.body.classList.toggle("register-page");
     document.documentElement.addEventListener("mousemove", followCursor);
@@ -71,6 +61,19 @@ export default function LandingPage() {
       document.documentElement.removeEventListener("mousemove", followCursor);
     };
   }, []);
+
+  const onHandleLogin = (e) => {
+    e.preventDefault()
+    ClientAxios.post('/api/customer/login', {
+      ...customer
+    }).then((response) => {
+      const { data } = response.data
+      const { token } = data
+      ClientAxios.defaults.headers.common['authorization'] = token;
+      navigate('/components')
+    })
+  }
+
   const followCursor = (event) => {
     let posX = event.clientX - window.innerWidth / 2;
     let posY = event.clientY - window.innerWidth / 6;
@@ -151,9 +154,14 @@ export default function LandingPage() {
                           </InputGroupAddon>
                           <Input
                             placeholder="Email"
-                            type="text"
+                            type="email" style={{ color: "black" }}
+                            value={customer.email}
                             onFocus={(e) => setEmailFocus(true)}
                             onBlur={(e) => setEmailFocus(false)}
+                            onChange={e => setCustomer({
+                              ...customer,
+                              email: e.target.value
+                            })}
                           />
                         </InputGroup>
                         <InputGroup
@@ -168,9 +176,14 @@ export default function LandingPage() {
                           </InputGroupAddon>
                           <Input
                             placeholder="Password"
-                            type="text"
+                            type="password" style={{ color: "black" }}
+                            value={customer.password}
                             onFocus={(e) => setPasswordFocus(true)}
                             onBlur={(e) => setPasswordFocus(false)}
+                            onChange={e => setCustomer({
+                              ...customer,
+                              password: e.target.value
+                            })}
                           />
                         </InputGroup>
                         <FormGroup check className="text-left">
@@ -179,7 +192,6 @@ export default function LandingPage() {
                             <span className="form-check-sign" />I agree to the{" "}
                             <a
                               href="#pablo"
-                              onClick={(e) => e.preventDefault()}
                             >
                               terms and conditions
                             </a>
@@ -191,7 +203,9 @@ export default function LandingPage() {
                     </CardBody>
                     <CardFooter>
 
-                      <Button className="btn-round" color="primary" size="lg">
+                      <Button className="btn-round" 
+                        color="primary" size="lg" 
+                        onClick={onHandleLogin}>
                         Get Started
                       </Button>
                       <NavLink tag={Link} to="/register-page">

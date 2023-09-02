@@ -16,6 +16,27 @@ class CustomerModel {
         })
     }
 
+    static login = async ({ email, password }) => {
+        return new Promise((resolve, reject) => {
+            con.query('SELECT * FROM customer WHERE email = ? AND password = ?', [email, password], 
+            function (error, results, fields) {
+                if (error) throw error;
+                const foundCustomer = results[0] ? results[0] : null
+                resolve(foundCustomer)
+            });
+        })
+    }
+
+    static updateToken = async ({ id, token }) => {
+        return new Promise((resolve, reject) => {
+            con.query('UPDATE customer SET token = ? WHERE id = ?', [token, id], 
+            function (error, results, fields) {
+                if (error) reject(error);
+                resolve(results)
+            });
+        })
+    }
+
     static getCustomerByEmail = async (email) => {
         return new Promise((resolve, reject) => {
             con.query('SELECT * FROM customer WHERE email = ?', [email], function (error, results, fields) {

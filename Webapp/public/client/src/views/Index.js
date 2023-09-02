@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* BLK Design System React - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 
 // core components
@@ -35,7 +18,7 @@ import NucleoIcons from "views/IndexSections/NucleoIcons.js";
 import Signup from "views/IndexSections/Signup.js";
 import Examples from "views/IndexSections/Examples.js";
 import Download from "views/IndexSections/Download.js";
-
+import ClientAxios from '../utils/fetch.utils'
 
 export default function Index() {
   var reactListDiv = document.querySelector('.list');
@@ -45,7 +28,11 @@ if (reactListDiv) {
 }
   React.useEffect(() => {
     document.body.classList.toggle("index-page");
-    // Specify how to clean up after this effect:
+    // Specify how to clean up after this effect:    // call to check user
+    ClientAxios.get('/api/customer/authen').then((response) => {
+      console.log(response)
+    })
+
     return function cleanup() {
       document.body.classList.toggle("index-page");
     };
