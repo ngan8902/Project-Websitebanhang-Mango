@@ -6,20 +6,25 @@
         height: 100%;
         position: absolute;
         padding: 5%;
-    }
-    .App-header{
-        background-color: white;
-        border-radius: 15px;
-        padding: 20px;
-        margin: 50px 350px 50px 350px;
-    }
-    .text-signup{
-        font-family: 'Montserrat';
-        font-size: 2.8rem;
-        -webkit-text-fill-color: transparent;
-        font-weight: 600;
-        background: linear-gradient(0deg, rgb(12 62 234) 0%, rgb(190 48 202) 35%, rgb(112 201 239) 100%);
-        text-align: center;
-        background-clip: text;
+
+        .App-header{
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 50px 350px 50px 350px;
+
+            .text-signup{
+                font-family: 'Montserrat';
+                font-size: 2.8rem;
+                -webkit-text-fill-color: transparent;
+                font-weight: 600;
+                background: linear-gradient(0deg, rgb(12 62 234) 0%, rgb(190 48 202) 35%, rgb(112 201 239) 100%);
+                text-align: center;
+                background-clip: text;
+            }
+            .mb-4{
+                margin-bottom: 1.5rem !important;
+            }
+        }
     }
 }

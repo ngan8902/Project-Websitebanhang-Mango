@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // lay token trong localStore -> gui xuong server thong qua api -> check token nay cho phep dang nhan khong 
   // -> token hop le: set authen bang true
   // -> token ko hop le: xoa token khoi localStore va authen la false
-let authen = true;
+let authen = false;
 if(authen) {
   root.render(
     <BrowserRouter>

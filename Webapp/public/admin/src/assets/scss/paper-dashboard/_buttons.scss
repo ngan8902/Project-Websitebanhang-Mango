@@ -240,28 +240,32 @@
 }
 
 .btn-đn {
-    background: linear-gradient(94deg, rgb(106 234 220) 0%, rgb(26 155 184) 48%, #081ec5 99%);
+    background: linear-gradient(267deg, rgb(106, 234, 220) 0%, rgb(26, 155, 184) 48%, #081ec5 99%);
     border: none;
     border-radius: 8px;
     height: 1.75rem;
+    width: 31.95rem;
     font-size: 1rem;
     color: white;
+    justify-items: center;
     &:hover{
-        background: linear-gradient(94deg, rgba(106, 234, 219, 0.566) 0%, rgba(26, 155, 184, 0.621) 48%, #081ec588 99%);
+        background: linear-gradient(267deg, rgba(106, 234, 219, 0.566) 0%, rgba(26, 155, 184, 0.621) 48%, #081ec588 99%);
 
     }
 
 }
 
 .btn-đk {
-    background: linear-gradient(94deg, rgb(106 234 220) 0%, rgb(26 155 184) 48%, #081ec5 99%);
+    background: linear-gradient(267deg, rgb(106 234 220) 0%, rgb(26 155 184) 48%, #081ec5 99%);
     border: none;
     border-radius: 8px;
     height: 1.75rem;
+    width: 31.95rem;
+    justify-items: center;
     font-size: 1rem;
     color: white;
     &:hover{
-        background: linear-gradient(94deg, rgba(106, 234, 219, 0.566) 0%, rgba(26, 155, 184, 0.621) 48%, #081ec588 99%);
+        background: linear-gradient(267deg, rgba(106, 234, 219, 0.566) 0%, rgba(26, 155, 184, 0.621) 48%, #081ec588 99%);
 
     }
 
