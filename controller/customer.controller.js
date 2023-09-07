@@ -99,7 +99,9 @@ class CustomerController {
         const customerEmail = req.headers["customer-email"]
         console.log(req.headers["customer-id"])
         
-        res.json({})
+        res.json({
+            customerId, customerEmail
+        })
     }
 
 }

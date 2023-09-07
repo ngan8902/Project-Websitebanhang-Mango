@@ -19,18 +19,24 @@ import Signup from "views/IndexSections/Signup.js";
 import Examples from "views/IndexSections/Examples.js";
 import Download from "views/IndexSections/Download.js";
 import ClientAxios from '../utils/fetch.utils'
-
+import { useState,useEffect } from "react";
 export default function Index() {
   var reactListDiv = document.querySelector('.list');
 
+const [customerAuthen, setCustomerAuthen] = useState({
+  Id: '',
+  emai: ''
+})
 if (reactListDiv) {
     reactListDiv.remove();
 }
-  React.useEffect(() => {
+ useEffect(() => {
     document.body.classList.toggle("index-page");
     // Specify how to clean up after this effect:    // call to check user
     ClientAxios.get('/api/customer/authen').then((response) => {
-      console.log(response)
+      const data =response.data;
+     setCustomerAuthen({Id: data.customerId,email: data.customerEmail})
+    
     })
 
     return function cleanup() {
@@ -39,7 +45,8 @@ if (reactListDiv) {
   }, []);
   return (
     <>
-      <IndexNavbar />
+      <IndexNavbar authen={customerAuthen}/>
+     {/* // <IndexNavbar  authen={customerAuthen}/> */}
       <div className="wrapper">
         <PageHeader />
         <div className="main">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import classnames from "classnames";
 import Message from './Message.js';
 // reactstrap components
@@ -44,7 +44,7 @@ export default function RegisterPage() {
     password: '',
     fullname: ''
   })
-
+  const navigate = useNavigate();
   React.useEffect(() => {
     document.body.classList.toggle("register-page");
     document.documentElement.addEventListener("mousemove", followCursor);
@@ -60,6 +60,7 @@ export default function RegisterPage() {
       ...customer
     }).then((response) => {
       console.log(response)
+      navigate('/login-page')
     })
 
   }

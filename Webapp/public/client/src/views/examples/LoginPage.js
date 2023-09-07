@@ -40,8 +40,8 @@ import Footer from "components/Footer/Footer.js";
 import bigChartData from "variables/charts.js";
 
 export default function LandingPage() {
-  const [squares1to6, setSquares1to6] = React.useState("");
-  const [squares7and8, setSquares7and8] = React.useState("");
+  const [squares1to6, setSquares1to6] = React.useState([]);
+  const [squares7and8, setSquares7and8] = React.useState([]);
   const [fullNameFocus, setFullNameFocus] = React.useState(false);
   const [emailFocus, setEmailFocus] = React.useState(false);
   const [passwordFocus, setPasswordFocus] = React.useState(false);
