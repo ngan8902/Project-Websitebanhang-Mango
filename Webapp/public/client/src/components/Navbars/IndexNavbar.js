@@ -1,26 +1,8 @@
-/*!
 
-=========================================================
-* BLK Design System React - v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/blk-design-system-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-
-
 
 // reactstrap components
 import {
@@ -49,6 +31,7 @@ function Itemauthen({authen}) {
 }
 export default function IndexNavbar({authen}) {
  // console.log(authen)
+ console.log(authen)
   //{id: 3, email: 'nhatanh@gmail.com'}
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [collapseOut, setCollapseOut] = React.useState("");
@@ -327,27 +310,13 @@ export default function IndexNavbar({authen}) {
             </UncontrolledDropdown>
             <NavItem className="p-0">
             
-       {authen ? <Itemauthen authen={authen}/>: null} 
+       {authen && (
+        <div>
+          Hello {authen.Id !== undefined ? (<p>{authen.email}</p>): (<p>Vo danh</p>)}
+        </div>
+       )} 
             </NavItem>
-            {/* <NavItem>
-              <Button
-                className="nav-link d-none d-lg-block"
-                color="primary"
-                target="_blank"
-                href="https://www.creative-tim.com/product/blk-design-system-pro-react?ref=bdsr-user-archive-index-navbar-upgrade-pro"
-              >
-                <i className="tim-icons icon-spaceship" /> Upgrade to PRO
-              </Button>
-            </NavItem> */}
-            {/* <NavItem>
-              <Button
-                className="nav-link d-none d-lg-block"
-                color="default"
-                onClick={scrollToDownload}
-              >
-                <i className="tim-icons icon-cloud-download-93" /> Download
-              </Button>
-            </NavItem> */}
+            
           </Nav>
         </Collapse>
       </Container>

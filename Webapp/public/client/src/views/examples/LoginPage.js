@@ -66,7 +66,12 @@ export default function LandingPage() {
     e.preventDefault()
     ClientAxios.post('/api/customer/login', {
       ...customer
+      
     }).then((response) => {
+      console.log(response)
+      //email, full name, password, token
+
+
       const { data } = response.data
       const { token } = data
       ClientAxios.defaults.headers.common['authorization'] = token;

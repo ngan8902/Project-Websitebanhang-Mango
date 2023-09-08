@@ -168,9 +168,12 @@ function Manshirt() {
             .catch(error => console.log(error));
     }
    
-
+   
     useEffect(() => {
         showProducts()
+        return ()=>{
+
+        }
     }, [])
 
     return (
@@ -214,7 +217,9 @@ function Manshirt() {
                                     </Col>
                                     )
 
-                                })}
+                                })
+                            
+                            }
                                 {/* <Productrow /> */}
 
 
