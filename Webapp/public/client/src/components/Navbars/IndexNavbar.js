@@ -22,13 +22,7 @@ import {
   Col,
   UncontrolledTooltip,
 } from "reactstrap";
-function Itemauthen({authen}) {
-  return (
-    <div>
-      <h5> {authen.email}</h5>
-    </div>
-  )
-}
+
 export default function IndexNavbar({authen}) {
  // console.log(authen)
  console.log(authen)
@@ -312,7 +306,7 @@ export default function IndexNavbar({authen}) {
             
        {authen && (
         <div>
-          Hello {authen.Id !== undefined ? (<p>{authen.email}</p>): (<p>Vo danh</p>)}
+          Hello {authen.Id !== undefined ||authen.Id !== null ? (<p>{authen.email}</p>): (<p>Vo danh</p>)}
         </div>
        )} 
             </NavItem>

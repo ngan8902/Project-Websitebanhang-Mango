@@ -1,6 +1,34 @@
 import React from "react";
-
+import {
+  CardText,
+  CardSubtitle,
+  Button,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardTitle,
+  Sidebar,
+  ListGroupItem,
+  ListGroup,
+  Container,
+  Row,
+  Col,
+  CardImg,
+  Label,
+  FormGroup,
+  Form,
+  Input,
+  InputGroupAddon,
+  InputGroupText,
+  InputGroup,
+  Navbar,
+  NavItem,
+  NavLink,
+  Nav
+} from "reactstrap";
 // core components
+import axios from 'axios';
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import PageHeader from "components/PageHeader/PageHeader.js";
 import Footer from "components/Footer/Footer.js";
@@ -38,11 +66,13 @@ if (reactListDiv) {
      setCustomerAuthen({Id: data.customerId,email: data.customerEmail})
     
     })
-
+    
     return function cleanup() {
       document.body.classList.toggle("index-page");
     };
   }, []);
+ 
+   
   return (
     <>
       <IndexNavbar authen={customerAuthen}/>
@@ -57,6 +87,7 @@ if (reactListDiv) {
           
           <BodyCard />
           <Bodytab/>
+
            {/* <Pagination />  
           <Notifications />
           <Typography />
