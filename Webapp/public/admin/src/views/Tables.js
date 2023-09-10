@@ -1,4 +1,5 @@
 import * as React from "react";
+import {FaCaretDown} from "react-icons/fa6";
 
 import {
   Card,
@@ -62,7 +63,7 @@ function Tables() {
     <>
       <div className="content">
         <div class="dropdown">
-          <button class="dropbtn">Danh mục sản phẩm</button>
+          <button class="dropbtn">Danh mục sản phẩm<FaCaretDown style={{marginLeft: "5px" , marginBottom: "4px"}}></FaCaretDown></button>
           <div class="dropdown-content">
             <a href="#">Áo</a>
             <a href="#">Quần</a>

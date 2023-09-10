@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import axios from "axios";
+import storeRedux from "./store";
 
 
 import "bootstrap/dist/css/bootstrap.css";
@@ -38,7 +38,10 @@ const longinPage = () => {
     axiosClient.get('/api/shop/authen').then((response) => {
       if(response && response.data && response.data.data) {
         const shopData = response.data.data;
-        console.log(shopData)
+        storeRedux.dispatch({
+          type: 'shopData',
+          shopData: shopData
+        })
         root.render(
           <BrowserRouter>
             <Routes>
