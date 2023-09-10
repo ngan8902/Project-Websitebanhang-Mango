@@ -1,10 +1,15 @@
 'use strict'
 
-const { connection, triggerTables, triggerTablesAdmin } = require('./index') // Destructuring
+const { connection, triggerTablesAdmin } = require('./index') // Destructuring
 const CustomerModel = require('../model/customer.repo')
+const CategoryModel = require('../model/category.repo')
+const ProductModel = require('../model/product.repo')
 
 connection(() => {
-    // triggerTables()
     triggerTablesAdmin()
     CustomerModel.initTableToDB()
+    CategoryModel.initTableToDB()
+    ProductModel.initTableToDB()
+
+    process.exit()
 })

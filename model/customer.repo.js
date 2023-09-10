@@ -51,7 +51,7 @@ class CustomerModel {
     }
 
     static initTableToDB = async () => {
-        var sql = 'CREATE TABLE customer (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, fullname VARCHAR(255) NOT NULL, token VARCHAR(255))';
+        var sql = 'CREATE TABLE IF NOT EXISTS customer (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, email VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, fullname VARCHAR(255) NOT NULL, token VARCHAR(255))';
         con.query(sql, function (err, result){
             if(err) throw err;
             console.log("Table Customer created!")
