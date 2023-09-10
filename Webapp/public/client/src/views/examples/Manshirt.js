@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import axios from 'axios';
+import ClientAxios from'../../utils/fetch.utils'
 //import {SiderbarMenu} from "views/examples/Manshirt.js";
 import { Link } from "react-router-dom";
 import { ROOT_URL } from "../../variables/constant"
@@ -156,7 +157,7 @@ function Productrow() {
 function Manshirt() {
     const [products, setProducts] = useState([])
     function showProducts() {
-        axios.get(`${ROOT_URL}/api/product/`)
+        ClientAxios.get(`/api/product/`)
             .then(res => {
                 
                 const { data} = res.data;
@@ -198,15 +199,15 @@ function Manshirt() {
                                     return (
                                         <Col key={index}>
                                         <Card >
-                                            <CardImg top width="100%" src={product.Image} alt="Card image cap" />
+                                            <CardImg top width="100%" src={product.ImagePath} alt="Card image cap" />
                                             <div className='card-product'>
 
                                                 <CardBody >
                                                     <div className='card-content'>
-                                                        <CardTitle className='card-title '>{product.sex}</CardTitle>
-                                                        <CardSubtitle className='card-title ' >{product.name}</CardSubtitle>
-                                                        <CardText className='card-price card-text'>{product.price}</CardText>
-                                                        <Button>Add to card </Button>
+                                                        <CardTitle className='card-title '>{product.CategoryID}</CardTitle>
+                                                        <CardSubtitle className='card-title ' >{product.Name}</CardSubtitle>
+                                                        <CardText className='card-price card-text'>{product.Price}</CardText>
+                                                        <Button>ADD TO CARD  </Button>
                                                     </div>
 
                                                 </CardBody>
@@ -225,7 +226,7 @@ function Manshirt() {
 
                             </Row>
                             <Row>
-                                <Productrow />
+                                {/* <Productrow /> */}
 
                             </Row>
                         </Col>
