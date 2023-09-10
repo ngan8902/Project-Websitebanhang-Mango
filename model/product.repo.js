@@ -15,10 +15,7 @@ class ProductModel{
 
     static initTableToDB = async () => {
         var sql2 ="CREATE TABLE IF NOT EXISTS products (ProductID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, CategoryID INT NOT NULL, Name VARCHAR(50) NOT NULL, Description VARCHAR(1000) NOT NULL, Price INT NULL,  ImagePath VARCHAR(255) NULL, FOREIGN KEY (CategoryID) REFERENCES categories(CategoryID)) ";
-        con.query(sql2,function(err,result){
-            if(err) throw err;
-            console.log("Table products created!")
-        })
+        con.querySync(sql2)
     }
 }
  module.exports=ProductModel

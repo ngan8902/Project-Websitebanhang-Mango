@@ -1,4 +1,5 @@
 var mysql = require('mysql')
+const { promisify } = require('util')
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -10,6 +11,8 @@ function connection(cb) {
     con.connect(function(err){
         if(err) throw err;
         console.log("Database is Connected::::::");
+        // Tạo ra một phương thức query mới nhưng là hàm promise
+        con.querySync = promisify(con.query)
         cb && cb();
     });
 }
