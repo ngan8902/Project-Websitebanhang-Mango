@@ -1,27 +1,20 @@
 import React from "react";
 import axios from "axios";
+import axiosClient from "../utils/fetch.utils";
 import { API_URL } from "../variables/constant";
 import { Link } from "react-router-dom";
+
 
 function Login() {
   const [Username, setUsername] = React.useState("");
   const [Password, setPassword] = React.useState("");
-
+  
   let getLogin = (username, password, token) => {
-    const options = {
-      method: "POST",
-      url: `${API_URL}/api/shop/login`,
-      data: {
-        username: username,
-        password: password,
-        token: token,
-      },
-      headers: {
-        "content-type": "application/json",
-        Accept: "application/json",
-      },
-    };
-    return axios.request(options);
+    return axiosClient.post('/api/shop/login', {
+      username: username,
+      password: password,
+      token: token,
+    })
   };
 
   let submit = () => {
@@ -29,9 +22,16 @@ function Login() {
       //  console.log(response);
       let data = response.data;
       if (data && !data.error) {
-        //   setLogined(true);
-        console.log(true);
+        if(data && data.data) {
+          const token = data.data.token
+          window.localStorage.setItem('tokenshop', token)
+          axiosClient.defaults.headers.common['authorization-shop'] = token;
+          window.location.reload()
+        } else {
+
+        }
       } else {
+
       }
     });
   };

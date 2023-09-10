@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import axios from "axios";
+
 
 import "bootstrap/dist/css/bootstrap.css";
 import "assets/scss/paper-dashboard.scss?v=1.3.0";
@@ -10,24 +12,11 @@ import "perfect-scrollbar/css/perfect-scrollbar.css";
 import AdminLayout from "layouts/Admin.js";
 import Login from "views/Login";
 import Signup from "views/Signup";
+import axiosClient from "./utils/fetch.utils";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// lay token trong localStore -> gui xuong server thong qua api -> check token nay cho phep dang nhan khong 
-  // -> token hop le: set authen bang true
-  // -> token ko hop le: xoa token khoi localStore va authen la false
-let authen = false;
-if(authen) {
-  root.render(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/admin/*" element={<AdminLayout />} />
-        <Route path="/" element={<Navigate to="/admin/dashboard" replace/>} />
-      </Routes>
-    </BrowserRouter>
-  );
-} else {
-  root.render(
+const longinPage = () => {
+  return root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/admin/login" element={<Login />} />
@@ -39,4 +28,29 @@ if(authen) {
   );
 }
 
-
+// lay token trong localStore -> gui xuong server thong qua api -> check token nay cho phep dang nhan khong 
+  // -> token hop le: set authen bang true
+  // -> token ko hop le: xoa token khoi localStore va authen la false
+  let authen = false;
+  const token = window.localStorage.getItem('tokenshop')
+  if(token) {
+    axiosClient.defaults.headers.common['authorization-shop'] = token
+    axiosClient.get('/api/shop/authen').then((response) => {
+      if(response && response.data && response.data.data) {
+        const shopData = response.data.data;
+        console.log(shopData)
+        root.render(
+          <BrowserRouter>
+            <Routes>
+              <Route path="/admin/*" element={<AdminLayout />} />
+              <Route path="/" element={<Navigate to="/admin/dashboard" replace/>} />
+            </Routes>
+          </BrowserRouter>
+        ); 
+      } else {
+        longinPage()
+      }
+    })
+  } else {
+    longinPage()
+  }

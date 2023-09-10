@@ -18,4 +18,4 @@ class ProductModel{
         con.querySync(sql2)
     }
 }
- module.exports=ProductModel
+ module.exports=ProductModel;

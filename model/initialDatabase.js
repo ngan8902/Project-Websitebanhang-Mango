@@ -1,9 +1,11 @@
 'use strict'
 
-const { connection, triggerTablesAdmin } = require('./index') // Destructuring
+const { connection } = require('./index') // Destructuring
 const CustomerModel = require('../model/customer.repo')
 const CategoryModel = require('../model/category.repo')
 const ProductModel = require('../model/product.repo')
+const ShopModel = require('../model/shop.repo')
+
 
 connection(async () => {
     try {

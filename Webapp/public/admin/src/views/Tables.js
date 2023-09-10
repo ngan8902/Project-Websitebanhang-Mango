@@ -61,9 +61,12 @@ function Tables() {
   return (
     <>
       <div className="content">
-        <div className="dropdown-sp">
-          <div className="listdanhmuc">
-            <Dropdown><a href="#">Danh mục sản phẩm</a></Dropdown>
+        <div class="dropdown">
+          <button class="dropbtn">Danh mục sản phẩm</button>
+          <div class="dropdown-content">
+            <a href="#">Áo</a>
+            <a href="#">Quần</a>
+            <a href="#">Váy</a>
           </div>
         </div>
         <Row>
