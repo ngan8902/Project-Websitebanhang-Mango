@@ -30,6 +30,7 @@ class ProductController {
     }
 
     static createProduct = (req, res, next) => {
+        
         res.json({
             message: 'Get data success!',
             data: req.body

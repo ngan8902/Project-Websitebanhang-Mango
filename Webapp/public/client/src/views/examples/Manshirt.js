@@ -155,7 +155,8 @@ function Productrow() {
 }
 
 function Manshirt() {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
+    
     function showProducts() {
         ClientAxios.get(`/api/product/`)
             .then(res => {
@@ -168,10 +169,16 @@ function Manshirt() {
             })
             .catch(error => console.log(error));
     }
+   const  handleViewdetail =(id)=>{
+    console.log(id)
+    
+    ClientAxios.get(`/api/product/${id}`)
+   }
    
    
     useEffect(() => {
         showProducts()
+        
         return ()=>{
 
         }
@@ -197,9 +204,9 @@ function Manshirt() {
                             <Row>
                                 {(products.length > 0) && products.map((product, index) => {
                                     return (
-                                        <Col key={index}>
+                                        <Col key={product.ProductID}>
                                         <Card >
-                                            <CardImg top width="100%" src={product.ImagePath} alt="Card image cap" />
+                                            <CardImg top width="500" height="400" src={product.ImagePath} alt="Card image cap" />
                                             <div className='card-product'>
 
                                                 <CardBody >
@@ -207,8 +214,10 @@ function Manshirt() {
                                                         <CardTitle className='card-title '>{product.CategoryID}</CardTitle>
                                                         <CardSubtitle className='card-title ' >{product.Name}</CardSubtitle>
                                                         <CardText className='card-price card-text'>{product.Price}</CardText>
-                                                        <Button>ADD TO CARD  </Button>
+                                                        <Button tag={Link} to="/detailproduct-page" onClick={ (e) => { handleViewdetail(product.ProductID) } } > VIEW </Button>
+                                                    {/* <Button tag={Link} to ={`/products/${product.id}`}>View</Button> */}
                                                     </div>
+                                                   
 
                                                 </CardBody>
 

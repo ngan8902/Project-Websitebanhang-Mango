@@ -96,7 +96,7 @@ export default function ProfilePage() {
   }, []);
   return (
     <>
-      <IndexNavbar />
+    
       <Message/>
       <div className="wrapper">
                 <section className="section" style={{backgroundColor:"#ffcacaa1"}}>

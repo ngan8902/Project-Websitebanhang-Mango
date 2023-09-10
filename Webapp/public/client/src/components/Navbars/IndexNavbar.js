@@ -271,7 +271,10 @@ export default function IndexNavbar({authen}) {
                 </ModalFooter>
               </Modal>
             </div>
-            <UncontrolledDropdown nav>
+           {authen && !authen.email ?  
+            <NavLink  style={{color: 'white'}}tag={Link} to="/login-page">Login </NavLink> :
+            <>
+             <UncontrolledDropdown nav>
               <DropdownToggle
                 caret
                 color="default"
@@ -281,7 +284,7 @@ export default function IndexNavbar({authen}) {
                 onClick={(e) => e.preventDefault()}
               >
                 <i className="fa fa-cogs d-lg-none d-xl-none" />
-                Menu
+                {authen && <p>{authen.email}</p>}
               </DropdownToggle>
               <DropdownMenu className="dropdown-with-icons">
                 <DropdownItem tag={Link} to="/">
@@ -292,24 +295,20 @@ export default function IndexNavbar({authen}) {
                   <i className="tim-icons icon-bullet-list-67" />
                   Register Page
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/login-page">
-                  <i className="tim-icons icon-image-02" />
-                  Login Page
-                </DropdownItem>
                 <DropdownItem tag={Link} to="/profile-page">
                   <i className="tim-icons icon-single-02" />
                   Payment Page
                 </DropdownItem>
+                <DropdownItem tag={Link} to="/profile-page">
+                  <i className="tim-icons icon-single-02" />
+                Log out
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            <NavItem className="p-0">
-            
-       {authen && (
-        <div>
-          Hello {authen.Id !== undefined ||authen.Id !== null ? (<p>{authen.email}</p>): (<p>Vo danh</p>)}
-        </div>
-       )} 
-            </NavItem>
+            </> 
+}
+           
+ 
             
           </Nav>
         </Collapse>

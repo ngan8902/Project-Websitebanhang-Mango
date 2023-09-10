@@ -21,13 +21,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/components" element={<Index />} />
+      <Route path="/" element={<Index />} />
       <Route path="/login-page" element={<LoginPage />} />
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/profile-page" element={<ProfilePage />} />
       <Route path ="/manshirt-page" element={<Manshirt/>} />
       <Route path ="/detailproduct-page" element={<Detailproduct/>} />
-      <Route path="*" element={<Navigate to="/components" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   </BrowserRouter>
 );

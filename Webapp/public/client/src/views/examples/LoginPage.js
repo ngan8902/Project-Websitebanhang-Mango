@@ -75,7 +75,7 @@ export default function LandingPage() {
       const { data } = response.data
       const { token } = data
       ClientAxios.defaults.headers.common['authorization'] = token;
-      navigate('/components')
+      navigate('/c')
     })
   }
 

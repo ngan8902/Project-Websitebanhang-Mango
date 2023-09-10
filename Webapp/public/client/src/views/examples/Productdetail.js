@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, {useState} from 'react';
+import { Link , useParams} from "react-router-dom";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footer/Footer.js";
+import ClientAxios from '../../utils/fetch.utils'
 import {
     CardText,
     CardSubtitle,
@@ -31,6 +32,25 @@ import {
     Nav
 } from "reactstrap";
 function Productdetail() {
+    const [Products, setProducts] = useState([])
+    const [thisProduct, setThisProduct] =useState([])
+    const {productId} = useParams()
+    function showProducts() {
+        ClientAxios.get(`/api/product/`)
+            .then(res => {
+                
+                const { data} = res.data;
+                // data nay la dat tren shopcontroller
+                console.log(data)
+                setProducts(data) 
+                const Productdetail = Products.find(prod => prod.id === productId)  
+                setThisProduct(Productdetail)
+           
+
+            })
+            .catch(error => console.log(error));
+          
+    }
     return (
         <>
             <div className="manshirt-header"></div>
@@ -44,7 +64,7 @@ function Productdetail() {
                         </Col>
                         <Col >
                             <h2 style={{ color: 'red' }}>Code: 01</h2>
-                            <h2>Vestons</h2>
+                            <h2>{thisProduct.Name}</h2>
                             <div className='product-price' style={{
                                 paddingTop: '8px', borderBottom: '1px solid gray',
                                 borderTop: '1px solid gray', width: '200px'
