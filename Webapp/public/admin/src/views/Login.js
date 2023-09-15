@@ -1,9 +1,7 @@
 import React from "react";
-import axios from "axios";
-import axiosClient from "../utils/fetch.utils";
-import { API_URL } from "../variables/constant";
 import { Link } from "react-router-dom";
 
+import axiosClient from "../utils/fetch.utils";
 
 function Login() {
   const [Username, setUsername] = React.useState("");

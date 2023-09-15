@@ -1,22 +1,47 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaFacebookMessenger} from "react-icons/fa";
-import Message from "message/message";
-import storeRedux from "../../store";
-
+import { FaFacebookMessenger } from "react-icons/fa";
 import { Button } from "reactstrap";
 
+import storeRedux from "../../store";
+import axiosClient from "../../utils/fetch.utils";
 import Login from "views/Login";
 
 function FixedPlugin(props) {
   const [classes, setClasses] = React.useState("dropdown");
   const [login, setShowlogin] = React.useState(false);
   const [shopData, setShopData] = React.useState(storeRedux.getState()?.shopData)
+ 
   const navigate = useNavigate();
 
+  let getLogout = (token) => {
+    return axiosClient.get('/api/shop/authen', {
+      token: token,
+    })
+  };
+
   const handleClicksignout = () => {
-    navigate("/admin/login");
-  }
+    getLogout().then(function (response) {
+       console.log(response);
+      let data = response.data;
+      if (data && !data.error) {
+        if(data && data.data) {
+          const token = data.data.token
+          window.localStorage.setItem('tokenshop', token)
+          axiosClient.defaults.headers.common['authorization-shop'] = token;
+          localStorage.clear();
+          navigate("/admin/login");
+        } else {
+
+        }
+      } else {
+
+      }
+    });
+  };
+  
+
+
 
   const handleClick = () => {
     if (classes === "dropdown") {
@@ -26,7 +51,7 @@ function FixedPlugin(props) {
     }
   };
 
-  
+
   return (
     <div>
       {
@@ -38,7 +63,7 @@ function FixedPlugin(props) {
                   <i className="fa fa-cog fa-2x" />
                 </div>
                 <ul className="dropdown-menu show">
-                  <li className="header-title">{ shopData.shopname }</li>
+                  <li className="header-title">{shopData.shopname}</li>
                   <li className="button-container">
                     <Button
                       href=""
@@ -72,13 +97,13 @@ function FixedPlugin(props) {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="icon-mess">
                 <FaFacebookMessenger ></FaFacebookMessenger>
                 <span className="badges" style={{ color: "red" }}></span>
               </div>
-              </div>
             </div>
+          </div>
 
       }
     </div>
