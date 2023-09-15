@@ -22,6 +22,7 @@ app.all('/*', function(req, res, next) {
 });
 
 app.use(express.static(__dirname + '/public/build'));
+console.log(__dirname + '/public/build')
 
 app.use("/api", routes);
 

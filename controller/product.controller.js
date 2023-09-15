@@ -30,11 +30,36 @@ class ProductController {
     }
 
     static createProduct = (req, res, next) => {
-        
+
         res.json({
             message: 'Get data success!',
-            data: req.body
+            data: res.body
         })
+    }
+    static getProductById = async (req, res, next) => {
+        try {
+            const productId = req.params.productId
+            const result = await ProductModel.getProductById(productId)
+            console.log(result)
+            res.status(200).json(
+                {
+                    message: 'Get product success!',
+                    data: result
+                }
+
+            )
+
+        }
+        catch (err) {
+            res.status(500).json(
+                {
+                    code: 500,
+                    message: 'Error',
+                    error: err.message
+                }
+            )
+        }
+
     }
 }
 

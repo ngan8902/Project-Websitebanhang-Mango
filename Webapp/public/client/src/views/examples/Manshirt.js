@@ -4,8 +4,9 @@ import Footer from "components/Footer/Footer.js";
 import axios from 'axios';
 import ClientAxios from'../../utils/fetch.utils'
 //import {SiderbarMenu} from "views/examples/Manshirt.js";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import { ROOT_URL } from "../../variables/constant"
+import Productdetail from "./Productdetail.js";
 
 import {
     CardText,
@@ -156,7 +157,7 @@ function Productrow() {
 
 function Manshirt() {
     const [products, setProducts] = useState([]);
-    
+    const navigate= useNavigate()
     function showProducts() {
         ClientAxios.get(`/api/product/`)
             .then(res => {
@@ -169,10 +170,19 @@ function Manshirt() {
             })
             .catch(error => console.log(error));
     }
-   const  handleViewdetail =(id)=>{
-    console.log(id)
+function  handleViewdetail(id){
+  //  console.log(id)
+    return(
+        <>
+          < Productdetail  id ={id}/>
+        </>
+
+       
+    )
+   
     
-    ClientAxios.get(`/api/product/${id}`)
+ 
+     // ClientAxios.get(`/api/product/${id}`)
    }
    
    
@@ -191,7 +201,7 @@ function Manshirt() {
             <div className="Manshirt" >
 
                 <Container>
-                    <h3 > SHiRT</h3>
+                    <h3 > SHiRT </h3>
                     <img src={require('../../assets/img/banner-manshirt.jpg')} className="imgbanner" ></img>
                     <h2 style={{ textAlign: 'center', padding: '10px' }}>PRODUCTS</h2>
                     <Row>
@@ -214,11 +224,12 @@ function Manshirt() {
                                                         <CardTitle className='card-title '>{product.CategoryID}</CardTitle>
                                                         <CardSubtitle className='card-title ' >{product.Name}</CardSubtitle>
                                                         <CardText className='card-price card-text'>{product.Price}</CardText>
-                                                        <Button tag={Link} to="/detailproduct-page" onClick={ (e) => { handleViewdetail(product.ProductID) } } > VIEW </Button>
+                                                        <Button onClick={()=>{navigate(`/detailproduct-page/${product.ProductID}`)}} >VIEW  </Button>
                                                     {/* <Button tag={Link} to ={`/products/${product.id}`}>View</Button> */}
+                                                    {/* <Button onClick={ (e) => { handleViewdetail(product.ProductID) } } > VIEW </Button> */}
                                                     </div>
                                                    
-
+                                                   
                                                 </CardBody>
 
                                             </div>

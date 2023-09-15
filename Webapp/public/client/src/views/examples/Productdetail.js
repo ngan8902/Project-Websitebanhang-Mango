@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link , useParams} from "react-router-dom";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footer/Footer.js";
@@ -32,25 +32,35 @@ import {
     Nav
 } from "reactstrap";
 function Productdetail() {
+    const {id}=useParams()
+    console.log(id);
     const [Products, setProducts] = useState([])
     const [thisProduct, setThisProduct] =useState([])
     const {productId} = useParams()
-    function showProducts() {
-        ClientAxios.get(`/api/product/`)
-            .then(res => {
+    // function showProducts() {
+    //     ClientAxios.get(`/api/product/`)
+    //         .then(res => {
                 
-                const { data} = res.data;
-                // data nay la dat tren shopcontroller
-                console.log(data)
-                setProducts(data) 
-                const Productdetail = Products.find(prod => prod.id === productId)  
-                setThisProduct(Productdetail)
+    //             const { data} = res.data;
+    //             // data nay la dat tren shopcontroller
+    //             console.log(data)
+    //             setProducts(data) 
+    //             const Productdetail = Products.find(prod => prod.id === productId)  
+    //             setThisProduct(Productdetail)
            
 
-            })
-            .catch(error => console.log(error));
+    //         })
+    //         .catch(error => console.log(error));
           
-    }
+    // }
+    useEffect(()=>{
+       ClientAxios.get(`/api/product/${id}`).then(
+        (res)=>{
+            const data = res.data
+            console.log(data)
+        }
+       )
+    },[])
     return (
         <>
             <div className="manshirt-header"></div>

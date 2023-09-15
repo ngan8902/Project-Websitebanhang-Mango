@@ -1,7 +1,7 @@
 
 
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 // reactstrap components
@@ -69,7 +69,13 @@ export default function IndexNavbar({authen}) {
       .getElementById("download-section")
       .scrollIntoView({ behavior: "smooth" });
   };
-
+  const navigate=useNavigate()
+const auth = localStorage.getItem('user')
+const handleLogout=()=>{
+  localStorage.clear();
+  navigate('/login-page')
+  
+}
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
@@ -299,7 +305,7 @@ export default function IndexNavbar({authen}) {
                   <i className="tim-icons icon-single-02" />
                   Payment Page
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/profile-page">
+                <DropdownItem tag={Link} to="/login-page" onClick={handleLogout}>
                   <i className="tim-icons icon-single-02" />
                 Log out
                 </DropdownItem>

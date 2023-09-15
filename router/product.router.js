@@ -6,8 +6,8 @@ const { authentication } = require('../authentication/checkAuth')
 
 //router.get("/", authentication, ProductController.getProducts)
 router.get("/", ProductController.getProducts)
-//router.get("/getdata",  ProductController.getProducts)
-
+//router.get("/getdata",  ProductController.getProducts
+router.get(`/:productId`, ProductController.getProductById)
 router.post("/", ProductController.createProduct)
 
 router.put("/", (req, res) => {

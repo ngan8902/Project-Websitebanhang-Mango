@@ -73,10 +73,16 @@ export default function LandingPage() {
 
 
       const { data } = response.data
+const results = response.data.data.result
+      
+const email = results.email
       const { token } = data
+      
+
       ClientAxios.defaults.headers.common['authorization'] = token;
-      navigate('/c')
-    })
+    localStorage.setItem('user',email)
+     navigate('/')
+    })  
   }
 
   const followCursor = (event) => {
@@ -115,8 +121,8 @@ export default function LandingPage() {
                 <Col>
 
                   <img src={require('../../assets/img/login2.jpg')} alt="" />
-                  <h1 style={{ marginTop: "20px" }}> Join Our Company</h1>
-                  <h4>You will have the opportunity to receive many great deals</h4>
+                  <h1 style={{ marginTop: "20px" }}> Trở thành khách hàng thân quen </h1>
+                  <h4>Bạn sẽ có cơ hội nhận các khuyến mãi hấp dẫn. </h4>
                 </Col>
                 <Col className="offset-lg-0 offset-md-3" lg="5" md="6">
                   <Card className="card-register">
@@ -126,27 +132,11 @@ export default function LandingPage() {
                         src={require("assets/img/square-purple-1.png")}
                       />
                       <CardTitle tag="h4" style={{ marginLeft: "2px", textAlign: "center", color: "white" }}>
-                        Login</CardTitle>
+                        Đăng nhập</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Form className="form">
-                        {/* <InputGroup
-                          className={classnames({
-                            "input-group-focus": fullNameFocus,
-                          })}
-                        >
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="tim-icons icon-single-02" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Full Name"
-                            type="text"
-                            onFocus={(e) => setFullNameFocus(true)}
-                            onBlur={(e) => setFullNameFocus(false)}
-                          />
-                        </InputGroup> */}
+                        
                         <InputGroup
                           className={classnames({
                             "input-group-focus": emailFocus,
@@ -154,7 +144,7 @@ export default function LandingPage() {
                         >
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="tim-icons icon-email-85" />
+                              <i className="tim-icons icon-email-85" style={{color: "#e14eca"}} />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
@@ -176,7 +166,7 @@ export default function LandingPage() {
                         >
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="tim-icons icon-lock-circle" />
+                              <i className="tim-icons icon-lock-circle" style={{color: "#e14eca"}} />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
@@ -194,11 +184,11 @@ export default function LandingPage() {
                         <FormGroup check className="text-left">
                           <Label check>
                             <Input type="checkbox" />
-                            <span className="form-check-sign" />I agree to the{" "}
+                            <span className="form-check-sign" /> 
                             <a
                               href="#pablo"
                             >
-                              terms and conditions
+                            Tôi đồng ý với các chính sách và điều kiện 
                             </a>
                             .
                           </Label>
@@ -211,10 +201,10 @@ export default function LandingPage() {
                       <Button className="btn-round" 
                         color="primary" size="lg" 
                         onClick={onHandleLogin}>
-                        Get Started
+                      Bắt đầu
                       </Button>
                       <NavLink tag={Link} to="/register-page">
-                        Don't have an account ?  Sign up
+                        Không có tài khoản? Hãy Đăng ký
                       </NavLink>
                     </CardFooter>
                   </Card>
