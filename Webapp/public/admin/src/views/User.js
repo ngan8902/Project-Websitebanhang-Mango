@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import logo from "Backgr-pink.svg";
 import PhoneInput from 'react-phone-input-2'
+import storeRedux from "store";
 
 // reactstrap components
 import {
@@ -20,6 +21,11 @@ import {
 
 function User() {
   const [phonenumber, setPhonenumber] = useState('')
+  const [shopData, setShopData] = React.useState(storeRedux.getState()?.shopData)
+  const [userName, setUsername] = React.useState(storeRedux.getState()?.userName)
+  const [address, setAddress] = React.useState(storeRedux.getState()?.address)
+
+
   return (
     <>
       <div className="content">
@@ -43,15 +49,15 @@ function User() {
                       </label>
                       <input id="file-input" type="file" />
                     </div> */}
-                    <h5 className="title">Bích Ngân</h5>
+                    <h5 className="title">{shopData.shopname}</h5>
                   </a>
-                  <p className="description">@bichngan</p>
+                  <p className="description">@{userName.username}</p>
                 </div>
                 <p className="description text-center">
                   "Hi!"
                 </p>
               </CardBody>
-              <CardFooter>
+              {/* <CardFooter>
                 <hr />
                 <div className="button-container">
                   <Row>
@@ -75,7 +81,7 @@ function User() {
                     </Col>
                   </Row>
                 </div>
-              </CardFooter>
+              </CardFooter> */}
             </Card>
           </Col>
           <Col md="8">
@@ -101,8 +107,7 @@ function User() {
                       <FormGroup>
                         <label>Tên người dùng</label>
                         <Input
-                          defaultValue="bichngan8902"
-                          placeholder="Tên người dùng"
+                          defaultValue={userName.username}
                           type="text"
                         />
                       </FormGroup>
@@ -121,7 +126,6 @@ function User() {
                       <FormGroup>
                         <label>Họ</label>
                         <Input
-                          defaultValue="Nguyễn"
                           placeholder="Họ"
                           type="text"
                         />
@@ -131,7 +135,6 @@ function User() {
                       <FormGroup>
                         <label>Tên</label>
                         <Input
-                          defaultValue="Ngân"
                           placeholder="Tên"
                           type="text"
                         />
@@ -143,7 +146,7 @@ function User() {
                       <FormGroup>
                         <label>Địa chỉ</label>
                         <Input
-                          defaultValue="11/3Abis Đ.NVQ P.ĐHT Q.12"
+                          defaultValue={address.address}
                           placeholder="Địa chỉ nhà"
                           type="text"
                         />
@@ -155,7 +158,6 @@ function User() {
                       <FormGroup>
                         <label>Thành Phố</label>
                         <Input
-                          defaultValue="Hồ Chí Minh"
                           placeholder="Thành Phố"
                           type="text"
                         />
@@ -165,7 +167,6 @@ function User() {
                       <FormGroup>
                         <label>Quốc Gia</label>
                         <Input
-                          defaultValue="Việt Nam"
                           placeholder="Quốc Gia"
                           type="text"
                         />
@@ -187,7 +188,6 @@ function User() {
                         <label>Tiểu sử.</label>
                         <Input
                           type="textarea"
-                          defaultValue="Tôi là sinh viên năm 3 tại trường Đại học Công Nghiệp"
                         />
                       </FormGroup>
                     </Col>

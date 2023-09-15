@@ -2,7 +2,14 @@ const initStateRedux = {
     shopData: {
 
     },
-    theme: null
+
+    userName: {
+
+    },
+    address: {
+
+    },
+
 }
 
 export default initStateRedux

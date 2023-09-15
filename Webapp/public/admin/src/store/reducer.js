@@ -10,12 +10,18 @@ function reducer(state = initStateRedux, action) {
                 ...state,
                 shopData: action.shopData
             }
-        case 'themes':
-            console.log('thems::::', action)
+        case 'userName':
+            console.log('userName::::', action)
             return {
                 ...state,
-                themes: action.themes
-            }    
+                userName: action.userName
+            }
+        case 'address':
+            console.log('address::::', action)
+            return {
+                ...state,
+                address: action.address
+            }
         default:
             return state;    
     }

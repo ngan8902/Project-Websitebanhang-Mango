@@ -38,9 +38,19 @@ const longinPage = () => {
     axiosClient.get('/api/shop/authen').then((response) => {
       if(response && response.data && response.data.data) {
         const shopData = response.data.data;
+        const userName = response.data.data;
+        const address = response.data.data;
         storeRedux.dispatch({
           type: 'shopData',
           shopData: shopData
+        })
+        storeRedux.dispatch({
+          type: 'userName',
+          userName: userName
+        })
+        storeRedux.dispatch({
+          type: 'address',
+          address: address
         })
         root.render(
           <BrowserRouter>
