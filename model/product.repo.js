@@ -5,7 +5,7 @@ const { con } = require('../model/index')
 class ProductModel{
     static getProducts =async()=>{
        return new Promise((resolve, reject) => {
-            con.query("SELECT * FROM products ", function(error, results, fields){
+            con.query("SELECT * FROM products  INNER JOIN categories ON products.CategoryID= categories.CategoryID ", function(error, results, fields){
                 if(error) reject(error)
             
                 resolve(results)

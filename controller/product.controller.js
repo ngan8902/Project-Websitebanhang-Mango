@@ -38,7 +38,7 @@ class ProductController {
     }
     static getProductById = async (req, res, next) => {
         try {
-            const productId = req.params.productId
+            const { productId } = req.query
             const result = await ProductModel.getProductById(productId)
             console.log(result)
             res.status(200).json(

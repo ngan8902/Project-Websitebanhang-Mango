@@ -32,8 +32,8 @@ import {
     Nav
 } from "reactstrap";
 function Productdetail() {
-    const { id } = useParams()
-    console.log(id);
+    const { poductId } = useParams()
+    console.log(useParams());
     const [Product, setProduct] = useState([])
     const [thisProduct, setThisProduct] = useState([])
     const { productId } = useParams()
@@ -54,7 +54,7 @@ function Productdetail() {
 
     // }
     useEffect(() => {
-        ClientAxios.get(`/api/product/${id}`).then(
+        ClientAxios.get(`/api/product/getdetail?productId=${poductId}&test=123`).then(
             (res) => {
                 const data = res.data.data
                 const product = data[0];

@@ -26,7 +26,7 @@ root.render(
       <Route path="/register-page" element={<RegisterPage />} />
       <Route path="/profile-page" element={<ProfilePage />} />
       <Route path ="/manshirt-page" element={<Manshirt/>} />
-      <Route path ="/detailproduct-page/:id" element={<Detailproduct />} />
+      <Route path ="/detailproduct-page/:poductId" element={<Detailproduct />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   </BrowserRouter>
