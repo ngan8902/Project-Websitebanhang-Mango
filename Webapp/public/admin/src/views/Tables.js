@@ -9,9 +9,8 @@ import {
   Table,
   Row,
   Col,
-  Button,
   Modal,
-  ModalHeader, ModalBody, ModalFooter, Dropdown
+  ModalHeader, ModalBody, ModalFooter
 } from "reactstrap";
 
 
@@ -66,9 +65,9 @@ function Tables() {
         <div class="dropdown">
           <button class="dropbtn">Danh mục sản phẩm<FaCaretDown style={{ marginLeft: "5px", marginBottom: "4px" }}></FaCaretDown></button>
           <div class="dropdown-content">
-            <Link to="/admin/tables/Ao" style={{ fontSize: "1rem" }}>Áo</Link>
-            <Link to="/admin/tables/Quan" style={{ fontSize: "1rem" }}>Quần</Link>
-            <Link to="/admin/tables/Vay" style={{ fontSize: "1rem" }}>Váy</Link>
+            <Link to="/admin/danhmucsanpham/Ao" style={{ fontSize: "1rem" }}>Áo</Link>
+            <Link to="/admin/danhmucsanpham/Quan" style={{ fontSize: "1rem" }}>Quần</Link>
+            <Link to="/admin/danhmucsanpham/Vay" style={{ fontSize: "1rem" }}>Váy</Link>
           </div>
         </div>
         <Row>

@@ -13,9 +13,9 @@ import AdminLayout from "layouts/Admin.js";
 import Login from "views/Login";
 import Signup from "views/Signup";
 import axiosClient from "./utils/fetch.utils";
-import Ao from "views/Listproduct.js/Product-Ao";
-import Quan from "views/Listproduct.js/Product-Quan";
-import Vay from "views/Listproduct.js/Product-Vay";
+import Ao from "views/Listproduct/Product-Ao";
+import Quan from "views/Listproduct/Product-Quan";
+import Vay from "views/Listproduct/Product-Vay";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const longinPage = () => {
@@ -60,12 +60,12 @@ if (token) {
           <Routes>
             <Route path="/admin/*" element={<AdminLayout />} />
             <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
-            <Route path="/admin/tables/Ao" element={<Ao />} />
-            <Route path="/admin/*" element={<Navigate to="/admin/tables/Ao" />} />
-            <Route path="/admin/tables/Quan" element={<Quan />} />
-            <Route path="/admin/*" element={<Navigate to="/admin/tables/Quan" />} />
-            <Route path="/admin/tables/Vay" element={<Vay />} />
-            <Route path="/admin/*" element={<Navigate to="/admin/tables/Vay" />} />
+            <Route path="/admin/danhmucsanpham/Ao" element={<Ao />} />
+            <Route path="/admin/*" element={<Navigate to="/admin/danhmucsanpham/Ao" />} />
+            <Route path="/admin/danhmucsanpham/Quan" element={<Quan />} />
+            <Route path="/admin/*" element={<Navigate to="/admin/danhmucsanpham/Quan" />} />
+            <Route path="/admin/danhmucsanpham/Vay" element={<Vay />} />
+            <Route path="/admin/*" element={<Navigate to="/admin/danhmucsanpham/Vay" />} />
           </Routes>
         </BrowserRouter>
       );
