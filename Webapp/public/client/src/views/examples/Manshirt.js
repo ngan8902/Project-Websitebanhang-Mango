@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import axios from 'axios';
-import ClientAxios from'../../utils/fetch.utils'
+import ClientAxios from '../../utils/fetch.utils'
 //import {SiderbarMenu} from "views/examples/Manshirt.js";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ROOT_URL } from "../../variables/constant"
 import Productdetail from "./Productdetail.js";
 
@@ -157,39 +157,42 @@ function Productrow() {
 
 function Manshirt() {
     const [products, setProducts] = useState([]);
-    const navigate= useNavigate()
+    const [categories, setCategories] = useState([]);
+    const navigate = useNavigate()
     function showProducts() {
         ClientAxios.get(`/api/product/`)
             .then(res => {
-                
-                const { data} = res.data;
+
+                const { data } = res.data;
                 // data nay la dat tren shopcontroller
                 console.log(data)
-                setProducts(data)           
+                setProducts(data)
+
 
             })
             .catch(error => console.log(error));
-    }
-function  handleViewdetail(id){
-  //  console.log(id)
-    return(
-        <>
-          < Productdetail  id ={id}/>
-        </>
+      
 
-       
-    )
-   
-    
- 
-     // ClientAxios.get(`/api/product/${id}`)
-   }
-   
-   
+    }
+    function showCategories() {
+        //  console.log(id)
+        ClientAxios.get(`/api/category/`)
+        .then(res => {
+            const { data } = res.data
+            console.log(data)
+            setCategories(data)
+        })
+
+
+
+        // ClientAxios.get(`/api/product/${id}`)
+    }
+
+
     useEffect(() => {
         showProducts()
-        
-        return ()=>{
+        showCategories()
+        return () => {
 
         }
     }, [])
@@ -213,34 +216,39 @@ function  handleViewdetail(id){
                         <Col sm="9">
                             <Row>
                                 {(products.length > 0) && products.map((product, index) => {
-                                    return (
-                                        <Col key={product.ProductID}>
-                                        <Card >
-                                            <CardImg top width="500" height="400" src={product.ImagePath} alt="Card image cap" />
-                                            <div className='card-product'>
+                                    
 
-                                                <CardBody >
-                                                    <div className='card-content'>
-                                                        <CardTitle className='card-title '>{product.CategoryID}</CardTitle>
-                                                        <CardSubtitle className='card-title ' >{product.Name}</CardSubtitle>
-                                                        <CardText className='card-price card-text'>{product.Price}</CardText>
-                                                        <Button onClick={()=>{navigate(`/detailproduct-page/${product.ProductID}`)}} >VIEW  </Button>
-                                                    {/* <Button tag={Link} to ={`/products/${product.id}`}>View</Button> */}
-                                                    {/* <Button onClick={ (e) => { handleViewdetail(product.ProductID) } } > VIEW </Button> */}
+
+                                        return (
+
+                                            <Col key={product.ProductID}>
+                                                <Card >
+                                                    <CardImg top width="500" height="400" src={product.ImagePath} alt="Card image cap" />
+                                                    <div className='card-product'>
+
+                                                        <CardBody >
+                                                            <div className='card-content'>
+                                                                <CardTitle className='card-title '>{product.CategoryID}</CardTitle>
+                                                                <CardSubtitle className='card-title ' >{product.Name}</CardSubtitle>
+                                                                <CardText className='card-price card-text'>{product.Price}</CardText>
+                                                                <Button onClick={() => { navigate(`/detailproduct-page/${product.ProductID}`) }} >VIEW  </Button>
+                                                                {/* <Button tag={Link} to ={`/products/${product.id}`}>View</Button> */}
+                                                                {/* <Button onClick={ (e) => { handleViewdetail(product.ProductID) } } > VIEW </Button> */}
+                                                            </div>
+
+
+                                                        </CardBody>
+
                                                     </div>
-                                                   
-                                                   
-                                                </CardBody>
 
-                                            </div>
+                                                </Card>
+                                            </Col>
+                                        )
 
-                                        </Card>
-                                    </Col>
-                                    )
+                                    })
+                               
 
-                                })
-                            
-                            }
+                                }
                                 {/* <Productrow /> */}
 
 

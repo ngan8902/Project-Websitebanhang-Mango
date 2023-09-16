@@ -8,6 +8,8 @@ const { authentication } = require('../authentication/checkAuth')
 router.get("/", ProductController.getProducts)
 //router.get("/getdata",  ProductController.getProducts
 router.get(`/:productId`, ProductController.getProductById)
+router.get(`/category/:id`, ProductController.getCategoryById) 
+
 router.post("/", ProductController.createProduct)
 
 router.put("/", (req, res) => {

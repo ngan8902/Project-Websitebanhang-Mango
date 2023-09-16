@@ -49,6 +49,7 @@ class ProductController {
 
             )
 
+
         }
         catch (err) {
             res.status(500).json(
@@ -61,6 +62,28 @@ class ProductController {
         }
 
     }
+    static getCategoryById = async (req, res, next) => {
+        try {
+            const id = req.params.id
+            console.log(id)
+            const result = await ProductModel.getCategoryById(id)
+            console.log(result)
+            res.status(200).json({
+                message: 'Get category of product success!',
+                data: result
+
+            })
+        }
+        catch (err) {
+            res.status(500).json({
+                code: 500,
+                message: 'Error',
+                error: err.message
+            })
+        }
+    }
+   
 }
+
 
 module.exports = ProductController
