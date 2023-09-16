@@ -115,11 +115,11 @@ export default function RegisterPage() {
                         >
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="tim-icons icon-single-02" />
+                              <i className="tim-icons icon-single-02 text-primary" />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                            placeholder="Full Name"
+                            placeholder="Họ Tên"
                             type="text" style={{ color: "black" }}
                             value={customer.fullname}
                             onFocus={(e) => setFullNameFocus(true)}
@@ -137,7 +137,7 @@ export default function RegisterPage() {
                         >
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="tim-icons icon-email-85" />
+                              <i className="tim-icons icon-email-85 text-primary" />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
@@ -159,11 +159,11 @@ export default function RegisterPage() {
                         >
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="tim-icons icon-lock-circle" />
+                              <i className="tim-icons icon-lock-circle text-primary" />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                            placeholder="Password"
+                            placeholder="Mật Khẩu"
                             type="password" style={{ color: "black" }}
                             value={customer.password}
                             onFocus={(e) => setPasswordFocus(true)}
@@ -175,14 +175,14 @@ export default function RegisterPage() {
                           />
                         </InputGroup>
                         <FormGroup check className="text-left">
-                          <Label check>
+                          <Label check className="text-primary">
                             <Input type="checkbox" />
-                            <span className="form-check-sign" />I agree to the{" "}
+                            <span className="form-check-sign" />Tôi đồng ý với {" "}
                             <a
                               href="#pablo"
                               onClick={(e) => e.preventDefault()}
                             >
-                              terms and conditions
+                              điều khoản và điều kiện
                             </a>
                             .
                           </Label>
@@ -197,7 +197,7 @@ export default function RegisterPage() {
                         Đăng Ký
                       </Button>
                       <NavLink tag={Link} to="/login-page">
-                        Have an account ? Login
+                        Tôi đã có tài khoản ? Đăng nhập
                       </NavLink>
                     </CardFooter>
                   </Card>
@@ -207,8 +207,8 @@ export default function RegisterPage() {
                 <Col>
 
                   <img src={require('../../assets/img/login1.jpg')} alt="" />
-                  <h1 style={{ marginTop: "20px" }}> Join Our Company</h1>
-                  <h4>You will have the opportunity to receive many great deals</h4>
+                  <h1 style={{ marginTop: "20px" }}> Nhanh Tay Đăng Ký</h1>
+                  <h4>Bạn sẽ có cơ hội nhận nhiều ưu đãi</h4>
                 </Col>
 
               </Row>
