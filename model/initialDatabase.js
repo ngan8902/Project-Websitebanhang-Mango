@@ -9,7 +9,7 @@ const ShopModel = require('../model/shop.repo')
 
 connection(async () => {
     try {
-        triggerTablesAdmin()
+        await ShopModel.initTableToDB()
         await CustomerModel.initTableToDB() // promise
         await CategoryModel.initTableToDB()
         await ProductModel.initTableToDB()

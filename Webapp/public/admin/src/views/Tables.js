@@ -1,6 +1,6 @@
 import * as React from "react";
-import {FaCaretDown} from "react-icons/fa6";
-
+import { FaCaretDown } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardHeader,
@@ -13,6 +13,7 @@ import {
   Modal,
   ModalHeader, ModalBody, ModalFooter, Dropdown
 } from "reactstrap";
+
 
 function Tables() {
   const [open, setOpen] = React.useState(false);
@@ -63,11 +64,11 @@ function Tables() {
     <>
       <div className="content">
         <div class="dropdown">
-          <button class="dropbtn">Danh mục sản phẩm<FaCaretDown style={{marginLeft: "5px" , marginBottom: "4px"}}></FaCaretDown></button>
+          <button class="dropbtn">Danh mục sản phẩm<FaCaretDown style={{ marginLeft: "5px", marginBottom: "4px" }}></FaCaretDown></button>
           <div class="dropdown-content">
-            <a href="#">Áo</a>
-            <a href="#">Quần</a>
-            <a href="#">Váy</a>
+            <Link to="/admin/tables/Ao" style={{ fontSize: "1rem" }}>Áo</Link>
+            <Link to="/admin/tables/Quan" style={{ fontSize: "1rem" }}>Quần</Link>
+            <Link to="/admin/tables/Vay" style={{ fontSize: "1rem" }}>Váy</Link>
           </div>
         </div>
         <Row>
