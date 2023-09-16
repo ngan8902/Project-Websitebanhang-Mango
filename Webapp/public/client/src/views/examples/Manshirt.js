@@ -174,28 +174,26 @@ function Manshirt() {
       
 
     }
-    function showCategories() {
-        //  console.log(id)
-        ClientAxios.get(`/api/category/`)
-        .then(res => {
-            const { data } = res.data
-            console.log(data)
-            setCategories(data)
-        })
-
-
-
-        // ClientAxios.get(`/api/product/${id}`)
-    }
-
-
     useEffect(() => {
         showProducts()
-        showCategories()
+       
         return () => {
 
         }
     }, [])
+
+    const handleProductId = (productId) => {
+       
+        if(productId>1){
+            return(
+                <>
+                <h3>Hello</h3>
+                </>
+            )
+
+        }
+       
+    }
 
     return (
         <>
@@ -204,36 +202,31 @@ function Manshirt() {
             <div className="Manshirt" >
 
                 <Container>
-                    <h3 > SHiRT </h3>
+                    <h3 > SHIRT </h3>
                     <img src={require('../../assets/img/banner-manshirt.jpg')} className="imgbanner" ></img>
-                    <h2 style={{ textAlign: 'center', padding: '10px' }}>PRODUCTS</h2>
+                    <h2 style={{ textAlign: 'center', padding: '10px' }}>CÁC SẢN PHẨM</h2>
                     <Row>
                         <Col sm="3" className="sidebarmenu">
-
                             <SiderbarMenu />
-
                         </Col>
                         <Col sm="9">
                             <Row>
                                 {(products.length > 0) && products.map((product, index) => {
-                                    
-
-
                                         return (
 
                                             <Col key={product.ProductID}>
+                                                  { handleProductId(product.ProductID) }
                                                 <Card >
-                                                    <CardImg top width="500" height="400" src={product.ImagePath} alt="Card image cap" />
+                                                    <CardImg top width="500" height="300" src={product.ImagePath} alt="Card image cap" />
                                                     <div className='card-product'>
-
+                                                      
                                                         <CardBody >
                                                             <div className='card-content'>
-                                                                <CardTitle className='card-title '>{product.CategoryID}</CardTitle>
-                                                                <CardSubtitle className='card-title ' >{product.Name}</CardSubtitle>
+                                                                <CardTitle className='card-title ' style={{    fontFamily: '"Poppins", sans-serif'}}>{product.cate_name}</CardTitle>
+                                                                <CardSubtitle className='card-title 'style={{letterSpacing: '0.25px'}} >{product.Name}</CardSubtitle>
                                                                 <CardText className='card-price card-text'>{product.Price}</CardText>
                                                                 <Button onClick={() => { navigate(`/detailproduct-page/${product.ProductID}`) }} >VIEW  </Button>
-                                                                {/* <Button tag={Link} to ={`/products/${product.id}`}>View</Button> */}
-                                                                {/* <Button onClick={ (e) => { handleViewdetail(product.ProductID) } } > VIEW </Button> */}
+                                                              
                                                             </div>
 
 

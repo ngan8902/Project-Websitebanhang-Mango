@@ -5,7 +5,8 @@ authentication: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1hbmdvIiw
 
 ### Get Customer
 GET http://localhost:3000/api/customer
-
+### Get Product
+GET http://localhost:3000/api/product/1
 ### POST Product
 POST http://localhost:3000/api/product
 content-type: application/json
