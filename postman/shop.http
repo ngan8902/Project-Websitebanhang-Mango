@@ -1,4 +1,4 @@
-### POST Product
+### POST Shop
 POST http://localhost:3000/api/shop
 content-type: application/json
 

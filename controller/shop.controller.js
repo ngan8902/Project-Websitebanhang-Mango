@@ -61,7 +61,6 @@ class ShopController {
     }
 
     static getDataAuthen = async (req, res, next) => {
-        console.log('test')
         try {
             const shopId = req.headers["shop-id"]
             const foundShop = await getShopById(shopId)
