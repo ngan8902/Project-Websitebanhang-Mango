@@ -63,6 +63,15 @@ function Productdetail() {
             }
         )
     }, [])
+
+    const handleAddToCart = () => {
+        ClientAxios.get(`/api/cart/addproduct?productId=${poductId}&customerId=123`).then(
+            (res) => {
+                console.log(res)
+            }
+        )
+    }
+
     return (
         <>
             <div className="manshirt-header"></div>
@@ -106,10 +115,7 @@ function Productdetail() {
                             </div>
 
 
-
-
-
-                            <Button tag={Link} to="/profile-page">Thêm vào giỏ hàng</Button>
+                            <Button onClick={handleAddToCart} >Thêm vào giỏ hàng</Button>
                         </Col>
                         <Col>
                             <Row>

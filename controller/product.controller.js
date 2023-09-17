@@ -9,7 +9,7 @@ class ProductController {
         try {
 
             const results = await ProductModel.getProducts()
-            console.log(results)
+            // console.log(results)
             if (!results) throw new Error("Don't have data");
             res.status(200).json({
                 message: 'Get product success!',
