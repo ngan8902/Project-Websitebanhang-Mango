@@ -192,7 +192,10 @@ const handleLogout=()=>{
             </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>
-
+        <form className="form-inline my-2 my-lg-0">
+          <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"/>
+          <button className="btn  my-2 my-sm-0" style={{backgroundColor:'purple'}} type="submit">Search</button>
+        </form>
         <Collapse
           className={"justify-content-end " + collapseOut}
           navbar

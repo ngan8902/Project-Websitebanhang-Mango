@@ -50,7 +50,7 @@ import ClientAxios from '../utils/fetch.utils'
 import { useState,useEffect } from "react";
 export default function Index() {
   var reactListDiv = document.querySelector('.list');
-
+  const [products, setProducts] = useState([]);
 const [customerAuthen, setCustomerAuthen] = useState({
   Id: '',
   emai: ''
@@ -58,7 +58,24 @@ const [customerAuthen, setCustomerAuthen] = useState({
 if (reactListDiv) {
     reactListDiv.remove();
 }
+function showProducts() {
+  ClientAxios.get(`/api/product/`)
+      .then(res => {
+
+          const { data } = res.data;
+          // data nay la dat tren shopcontroller
+          console.log(data)
+          setProducts(data)
+          
+
+
+      })
+      .catch(error => console.log(error));
+
+
+}
  useEffect(() => {
+  showProducts()
     document.body.classList.toggle("index-page");
     // Specify how to clean up after this effect:    // call to check user
     ClientAxios.get('/api/customer/authen').then((response) => {
@@ -66,7 +83,7 @@ if (reactListDiv) {
      setCustomerAuthen({Id: data.customerId,email: data.customerEmail})
     
     })
-    
+   
     return function cleanup() {
       document.body.classList.toggle("index-page");
     };
@@ -86,7 +103,7 @@ if (reactListDiv) {
   <Tabs />*/}
           
           <BodyCard />
-          <Bodytab/>
+          <Bodytab products={products}/>
 
            {/* <Pagination />  
           <Notifications />

@@ -41,8 +41,8 @@ function Cardproductview(product) {
 
 }
 export { Cardproductview };
-export default function Bodytab() {
-
+export default function Bodytab({products}) {
+console.log(products)
     const [currentActiveTab, setCurrentActiveTab] = useState('1');
 
     // Toggle active state for Tab
@@ -105,10 +105,18 @@ export default function Bodytab() {
                     <TabContent activeTab={currentActiveTab}>
                         <TabPane tabId="1">
                             <Row>
-                                <Cardproductview src={require('../../assets/img/product1.jpg')} />
+                                {products.map((product,index)=>{
+                                    return(
+                                        <>
+                                        <Cardproductview key={index} src={product.ImagePath} />
+                                        </>
+
+                                    )
+                                })}
+                                {/* <Cardproductview src={products.ImagePath} />
                                 <Cardproductview src={require('../../assets/img/product2.jpg')} />
                                 <Cardproductview src={require('../../assets/img/product3.jpg')} />
-                                <Cardproductview src={require('../../assets/img/product4.jpg')} />
+                                <Cardproductview src={require('../../assets/img/product4.jpg')} /> */}
 
 
 
