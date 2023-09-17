@@ -30,7 +30,7 @@ function FixedPlugin(props) {
           window.localStorage.setItem('tokenshop', token)
           axiosClient.defaults.headers.common['authorization-shop'] = token;
           localStorage.clear();
-          navigate("/admin/login");
+          window.location.reload();
         } else {
 
         }

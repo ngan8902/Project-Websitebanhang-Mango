@@ -10,7 +10,7 @@ class ProductModel{
             
                 resolve(results)
             })
-       }) 
+        })
     }
 static getProductById=async(id)=>{
     return new Promise((resolve,reject)=>{
@@ -30,8 +30,8 @@ static getCategoryById=(id)=>{
 }
 
     static initTableToDB = async () => {
-        var sql2 ="CREATE TABLE IF NOT EXISTS products (ProductID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, CategoryID INT NOT NULL, Name VARCHAR(50) NOT NULL, Description VARCHAR(1000) NOT NULL, Price INT NULL,  ImagePath VARCHAR(255) NULL, FOREIGN KEY (CategoryID) REFERENCES categories(CategoryID)) ";
+        var sql2 = "CREATE TABLE IF NOT EXISTS products (ProductID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, CategoryID INT NOT NULL, Name VARCHAR(50) NOT NULL, Description VARCHAR(1000) NOT NULL, Price INT NULL,  ImagePath VARCHAR(255) NULL, FOREIGN KEY (CategoryID) REFERENCES categories(CategoryID)) ";
         con.querySync(sql2)
     }
 }
- module.exports=ProductModel;
+module.exports = ProductModel;
