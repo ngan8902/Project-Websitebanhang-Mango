@@ -4,55 +4,18 @@ import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import ClientAxios from '../../utils/fetch.utils'
 import {
-    CardText,
-    CardSubtitle,
     Button,
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    CardTitle,
-    Sidebar,
-    ListGroupItem,
-    ListGroup,
     Container,
     Row,
-    Col,
-    CardImg,
-    Label,
-    FormGroup,
-    Form,
-    Input,
-    InputGroupAddon,
-    InputGroupText,
-    InputGroup,
-    Navbar,
-    NavItem,
-    NavLink,
-    Nav
+    Col
 } from "reactstrap";
 function Productdetail() {
     const { poductId } = useParams()
     console.log(useParams());
     const [Product, setProduct] = useState([])
     const [thisProduct, setThisProduct] = useState([])
-    const { productId } = useParams()
-    // function showProducts() {
-    //     ClientAxios.get(`/api/product/`)
-    //         .then(res => {
+    const CartSession = 'usercart'
 
-    //             const { data} = res.data;
-    //             // data nay la dat tren shopcontroller
-    //             console.log(data)
-    //             setProducts(data) 
-    //             const Productdetail = Products.find(prod => prod.id === productId)  
-    //             setThisProduct(Productdetail)
-
-
-    //         })
-    //         .catch(error => console.log(error));
-
-    // }
     useEffect(() => {
         ClientAxios.get(`/api/product/getdetail?productId=${poductId}&test=123`).then(
             (res) => {
@@ -64,12 +27,54 @@ function Productdetail() {
         )
     }, [])
 
+    // function setCookie(cname, cvalue, exdays) {
+    //     const d = new Date();
+    //     d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    //     let expires = "expires="+ d.toUTCString();
+    //     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    // }
+
     const handleAddToCart = () => {
-        ClientAxios.get(`/api/cart/addproduct?productId=${poductId}&customerId=123`).then(
-            (res) => {
-                console.log(res)
+        const { ProductID, CategoryID, Name, ImagePath, Price, Description } = Product
+        let cart = sessionStorage.getItem(CartSession);
+        if(!cart) {
+            cart = {
+                products: [
+                    {
+                        ProductID,
+                        Name,
+                        quantiy: 1,
+                    }
+                ],
+                totalQuantity: 1
             }
-        )
+            sessionStorage.setItem(CartSession, JSON.stringify(cart))
+        } else {
+            cart = JSON.parse(cart)
+            const { products } = cart
+            const newProducts = products.map((p) => {
+                cart.totalQuantity = cart.totalQuantity + 1
+                if(p.ProductID === ProductID) {
+                    p.quantiy = p.quantiy + 1         
+                    return p
+                } else {
+                    return {
+                        ProductID,
+                        Name,
+                        quantiy: 1,
+                    }
+                }
+            })
+            cart = {
+                ...cart,
+                products: newProducts
+            }
+            sessionStorage.setItem(CartSession, JSON.stringify(cart))
+        }
+        // Ở chổ này sau khi add product vào giỏ hàng thì web reload => ko nên làm như vậy
+        // Do web mình dùng Client Side render nên khi add vào giỏ hàng thì mình tìm cách gọi lại giỏ hàng trong navbar để lấy dữ liệu mới.
+        // E tìm hiểu Redux để làm chổ này tối ưu hơn nha
+        window.location.reload()
     }
 
     return (
