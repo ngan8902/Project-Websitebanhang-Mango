@@ -113,10 +113,7 @@ console.log(products)
 
                                     )
                                 })}
-                                {/* <Cardproductview src={products.ImagePath} />
-                                <Cardproductview src={require('../../assets/img/product2.jpg')} />
-                                <Cardproductview src={require('../../assets/img/product3.jpg')} />
-                                <Cardproductview src={require('../../assets/img/product4.jpg')} /> */}
+                               
 
 
 

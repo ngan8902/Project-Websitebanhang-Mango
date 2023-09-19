@@ -43,6 +43,8 @@ function Productdetail() {
                     {
                         ProductID,
                         Name,
+                        ImagePath,
+                        Price,
                         quantiy: 1,
                     }
                 ],
@@ -58,11 +60,21 @@ function Productdetail() {
                     p.quantiy = p.quantiy + 1         
                     return p
                 } else {
+                   const cart_data={ ProductID,
+                    Name,
+                    ImagePath,
+                    Price,
+                    quantiy: 1 }
+                     cart.push(cart_data)
                     return {
-                        ProductID,
-                        Name,
-                        quantiy: 1,
+                       
+                            ProductID,
+                            Name,
+                            ImagePath,
+                            Price,
+                            quantiy: 1                       
                     }
+                    
                 }
             })
             cart = {

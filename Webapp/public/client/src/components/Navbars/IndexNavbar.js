@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-
+import ClientAxios from '../../utils/fetch.utils'
 // reactstrap components
 import {
   Collapse,
@@ -30,9 +30,9 @@ export default function IndexNavbar({ authen }) {
   const [color, setColor] = React.useState("navbar-transparent");
   const [cart, setCart] = React.useState({})
   // const { className } = props;
-
+const[findproducts,setFindproduct] = useState({})
   const [modal, setModal] = useState(false);
-
+const [text,setText] =useState({})
   const toggle = () => setModal(!modal);
   React.useEffect(() => {
     const cartSession = sessionStorage.getItem('usercart')
@@ -79,6 +79,17 @@ export default function IndexNavbar({ authen }) {
     localStorage.clear();
     navigate("/login-page");
   };
+  const handleSearch =()=>{
+    ClientAxios.get(`/api/product/search?text=${text}`).then(
+      (res) => {
+          const data = res.data.data
+         
+         console.log(data)
+          setFindproduct(data)
+        
+      }
+  )
+  }
   return (
     <Navbar className={"fixed-top " + color} color-on-scroll="100" expand="lg">
       <Container>
@@ -186,11 +197,13 @@ export default function IndexNavbar({ authen }) {
             type="text"
             placeholder="Search"
             aria-label="Search"
+            onChange={(e)=>setText(e.target.value)}
           />
           <button
             className="btn  my-2 my-sm-0"
             style={{ backgroundColor: "purple" }}
             type="submit"
+            onClick={handleSearch}
           >
             Search
           </button>
@@ -247,34 +260,19 @@ export default function IndexNavbar({ authen }) {
                     <Col sm="4">
                       <img
                         width="100%"
-                        src={require("../../assets/img/product1.jpg")}
+                        src= {cart ? cart.ImagePath : null}
                         alt="Card image cap"
                       ></img>
                     </Col>
                     <Col sm="4" style={{ margin: "auto" }}>
-                      <h5>Veston for Business</h5>
-                      <p>110 $</p>
+                      <h5>{cart.Name}</h5>
+                      <p>{cart.Price}</p>
                     </Col>
                     <Col sm="4" style={{ margin: "auto" }}>
                       <Button color="danger">Delete</Button>
                     </Col>
                   </Row>
-                  <Row>
-                    <Col sm="4">
-                      <img
-                        width="100%"
-                        src={require("../../assets/img/product3.jpg")}
-                        alt="Card image cap"
-                      ></img>
-                    </Col>
-                    <Col sm="4" style={{ margin: "auto" }}>
-                      <h5>Veston for Business</h5>
-                      <p>125 $</p>
-                    </Col>
-                    <Col sm="4" style={{ margin: "auto" }}>
-                      <Button color="danger">Delete</Button>
-                    </Col>
-                  </Row>
+
                 </ModalBody>
                 <ModalFooter>
                   <Button color="success" tag={Link} to="/profile-page">

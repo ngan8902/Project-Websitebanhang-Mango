@@ -82,6 +82,30 @@ class ProductController {
             })
         }
     }
+    static searchProduct =async(req,res,next)=>{
+        try{
+            const { text } = req.query
+            const result = await ProductModel.searchProduct(text)
+            console.log(result)
+            res.status(200).json(
+                {
+                    message: 'Get product success!',
+                    data: result
+                }
+
+            )
+
+        }
+        catch (err) {
+            res.status(500).json(
+                {
+                    code: 500,
+                    message: 'Error',
+                    error: err.message
+                }
+            )
+        }
+    }
    
 }
 

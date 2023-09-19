@@ -9,6 +9,7 @@ router.get("/", ProductController.getProducts)
 //router.get("/getdata",  ProductController.getProducts
 router.get(`/getdetail`, ProductController.getProductById)
 router.get(`/category/:id`, ProductController.getCategoryById) 
+router.get(`/search`, ProductController.searchProduct) 
 
 router.post("/", ProductController.createProduct)
 

@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import "assets/css/nucleo-icons.css";
 import "assets/scss/blk-design-system-react.scss";
 import "assets/demo/demo.css";
-
 import Index from "views/Index.js";
 import LoginPage from "views/examples/LoginPage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
