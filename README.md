@@ -35,7 +35,7 @@ Website cho chủ cửa hàng: http://localhost:3000/admin
 #### Kiến trúc :
 <br>
 
-![Kiến trúc website](./architecture//web_architecture.png)
+![Kiến trúc website](./images//web_architecture.png)
 
 * Website sử dụng kiến monolithic (kiến trúc khối). 
 * Website chia ra 2 side là Frontend và Backend. Frontend và Backend giao tiếp với nhau thông qua API.
