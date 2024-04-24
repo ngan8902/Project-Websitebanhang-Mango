@@ -1,5 +1,5 @@
 # ĐỒ ÁN HỌC TẬP - WEBSITE BÁN QUẦN ÁO MANGO 
-## THỰC HIỆN BỞI: Bích Ngân và Minh Anh
+## THỰC HIỆN BỞI: Bích Ngân, Minh Anh và Huy Nguyễn
 
 ### Mô tả
 <hr>
